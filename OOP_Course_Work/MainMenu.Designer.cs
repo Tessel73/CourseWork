@@ -36,14 +36,6 @@
             this.btnFormTurUpdate = new System.Windows.Forms.Button();
             this.btnFormTurAdd = new System.Windows.Forms.Button();
             this.dataGridViewTur = new System.Windows.Forms.DataGridView();
-            this.turIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dayNightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceDB = new System.Windows.Forms.BindingSource(this.components);
             this.DBDataSet = new OOP_Course_Work.DBDataSet();
@@ -100,6 +92,14 @@
             this.TableAdapterHotel = new OOP_Course_Work.DBDataSetTableAdapters.HotelTableAdapter();
             this.TableAdapterExcursion = new OOP_Course_Work.DBDataSetTableAdapters.ExcursionTableAdapter();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.turIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayNightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlMain.SuspendLayout();
             this.Туры.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTur)).BeginInit();
@@ -207,61 +207,6 @@
             this.dataGridViewTur.RowTemplate.Height = 24;
             this.dataGridViewTur.Size = new System.Drawing.Size(1079, 300);
             this.dataGridViewTur.TabIndex = 7;
-            // 
-            // turIDDataGridViewTextBoxColumn
-            // 
-            this.turIDDataGridViewTextBoxColumn.DataPropertyName = "TurID";
-            this.turIDDataGridViewTextBoxColumn.HeaderText = "TurID";
-            this.turIDDataGridViewTextBoxColumn.Name = "turIDDataGridViewTextBoxColumn";
-            this.turIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // countryDataGridViewTextBoxColumn
-            // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Страна";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            this.countryDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dateODataGridViewTextBoxColumn
-            // 
-            this.dateODataGridViewTextBoxColumn.DataPropertyName = "DateO";
-            this.dateODataGridViewTextBoxColumn.HeaderText = "Дата отправления";
-            this.dateODataGridViewTextBoxColumn.Name = "dateODataGridViewTextBoxColumn";
-            this.dateODataGridViewTextBoxColumn.Width = 120;
-            // 
-            // dateIDataGridViewTextBoxColumn
-            // 
-            this.dateIDataGridViewTextBoxColumn.DataPropertyName = "DateI";
-            this.dateIDataGridViewTextBoxColumn.HeaderText = "Дата прибытия";
-            this.dateIDataGridViewTextBoxColumn.Name = "dateIDataGridViewTextBoxColumn";
-            this.dateIDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // dayNightDataGridViewTextBoxColumn
-            // 
-            this.dayNightDataGridViewTextBoxColumn.DataPropertyName = "Day_Night";
-            this.dayNightDataGridViewTextBoxColumn.HeaderText = "Дни/Ночи";
-            this.dayNightDataGridViewTextBoxColumn.Name = "dayNightDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость, руб";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Экскурсия";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // turBindingSource
             // 
@@ -743,6 +688,62 @@
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
+            // turIDDataGridViewTextBoxColumn
+            // 
+            this.turIDDataGridViewTextBoxColumn.DataPropertyName = "TurID";
+            this.turIDDataGridViewTextBoxColumn.HeaderText = "TurID";
+            this.turIDDataGridViewTextBoxColumn.Name = "turIDDataGridViewTextBoxColumn";
+            this.turIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.turIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Страна";
+            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // dateODataGridViewTextBoxColumn
+            // 
+            this.dateODataGridViewTextBoxColumn.DataPropertyName = "DateO";
+            this.dateODataGridViewTextBoxColumn.HeaderText = "Дата отправления";
+            this.dateODataGridViewTextBoxColumn.Name = "dateODataGridViewTextBoxColumn";
+            this.dateODataGridViewTextBoxColumn.Width = 120;
+            // 
+            // dateIDataGridViewTextBoxColumn
+            // 
+            this.dateIDataGridViewTextBoxColumn.DataPropertyName = "DateI";
+            this.dateIDataGridViewTextBoxColumn.HeaderText = "Дата прибытия";
+            this.dateIDataGridViewTextBoxColumn.Name = "dateIDataGridViewTextBoxColumn";
+            this.dateIDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // dayNightDataGridViewTextBoxColumn
+            // 
+            this.dayNightDataGridViewTextBoxColumn.DataPropertyName = "Day_Night";
+            this.dayNightDataGridViewTextBoxColumn.HeaderText = "Дни/Ночи";
+            this.dayNightDataGridViewTextBoxColumn.Name = "dayNightDataGridViewTextBoxColumn";
+            this.dayNightDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость, руб";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Экскурсия";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -821,14 +822,6 @@
         public DBDataSetTableAdapters.HotelTableAdapter TableAdapterHotel;
         private System.Windows.Forms.BindingSource excursionBindingSource;
         public DBDataSetTableAdapters.ExcursionTableAdapter TableAdapterExcursion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dayNightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn passportDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
@@ -853,6 +846,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn excursionIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayNightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }
 
