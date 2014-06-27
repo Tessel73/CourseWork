@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91663FF3-040C-4796-83AC-CDD67297AA66}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OOP_Course_Work</RootNamespace>
+    <AssemblyName>OOP_Course_Work</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\..\Downloads\HtmlAgilityPack.1.4.6 (1)\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client.cs">
+      <DependentUpon>CWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contract.cs">
+      <DependentUpon>CWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractAddDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractAddDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CWModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CWModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CWModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CWModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseFunction.cs" />
+    <Compile Include="DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Excursion.cs">
+      <DependentUpon>CWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientAdd.Designer.cs">
+      <DependentUpon>FormClientAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientUpdate.Designer.cs">
+      <DependentUpon>FormClientUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormContractAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormContractAdd.Designer.cs">
+      <DependentUpon>FormContractAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormContractUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormContractUpdate.Designer.cs">
+      <DependentUpon>FormContractUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExcursionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExcursionAdd.Designer.cs">
+      <DependentUpon>FormExcursionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExcursionUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExcursionUpdate.Designer.cs">
+      <DependentUpon>FormExcursionUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHotelAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHotelAdd.Designer.cs">
+      <DependentUpon>FormHotelAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHotelUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHotelUpdate.Designer.cs">
+      <DependentUpon>FormHotelUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTurAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTurAdd.Designer.cs">
+      <DependentUpon>FormTurAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTurUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTurUpdate.Designer.cs">
+      <DependentUpon>FormTurUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel.cs">
+      <DependentUpon>CWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tur.cs">
+      <DependentUpon>CWModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurAddDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurAddDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormClientAdd.resx">
+      <DependentUpon>FormClientAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientUpdate.resx">
+      <DependentUpon>FormClientUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContractAdd.resx">
+      <DependentUpon>FormContractAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContractUpdate.resx">
+      <DependentUpon>FormContractUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExcursionAdd.resx">
+      <DependentUpon>FormExcursionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExcursionUpdate.resx">
+      <DependentUpon>FormExcursionUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHotelAdd.resx">
+      <DependentUpon>FormHotelAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHotelUpdate.resx">
+      <DependentUpon>FormHotelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTurAdd.resx">
+      <DependentUpon>FormTurAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTurUpdate.resx">
+      <DependentUpon>FormTurUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="CWModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CWModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ContractAddDataSet.xsc">
+      <DependentUpon>ContractAddDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ContractAddDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContractAddDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContractAddDataSet.xss">
+      <DependentUpon>ContractAddDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CWModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CWModel.Context.cs</LastGenOutput>
+      <DependentUpon>CWModel.edmx</DependentUpon>
+    </None>
+    <None Include="CWModel.edmx.diagram">
+      <DependentUpon>CWModel.edmx</DependentUpon>
+    </None>
+    <None Include="CWModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CWModel.cs</LastGenOutput>
+      <DependentUpon>CWModel.edmx</DependentUpon>
+    </None>
+    <None Include="DBDataSet.xsc">
+      <DependentUpon>DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBDataSet.xss">
+      <DependentUpon>DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TurAddDataSet.xsc">
+      <DependentUpon>TurAddDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TurAddDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TurAddDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TurAddDataSet.xss">
+      <DependentUpon>TurAddDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CWModel.edmx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

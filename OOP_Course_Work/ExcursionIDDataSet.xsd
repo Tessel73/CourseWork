@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExcursionIDDataSet" targetNamespace="http://tempuri.org/ExcursionIDDataSet.xsd" xmlns:mstns="http://tempuri.org/ExcursionIDDataSet.xsd" xmlns="http://tempuri.org/ExcursionIDDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="OOP_CourseWork_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OOP_CourseWork_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.OOP_Course_Work.Properties.Settings.GlobalReference.Default.OOP_CourseWork_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ExcursionTableAdapter" GeneratorDataComponentClassName="ExcursionTableAdapter" Name="Excursion" UserDataComponentName="ExcursionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OOP_CourseWork_DBConnectionString (Settings)" DbObjectName="OOP_CourseWork_DB.dbo.Excursion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name FROM dbo.Excursion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ExcursionIDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ExcursionIDDataSet" msprop:Generator_UserDSName="ExcursionIDDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Excursion" msprop:Generator_TableClassName="ExcursionDataTable" msprop:Generator_TableVarName="tableExcursion" msprop:Generator_TablePropName="Excursion" msprop:Generator_RowDeletingName="ExcursionRowDeleting" msprop:Generator_RowChangingName="ExcursionRowChanging" msprop:Generator_RowEvHandlerName="ExcursionRowChangeEventHandler" msprop:Generator_RowDeletedName="ExcursionRowDeleted" msprop:Generator_UserTableName="Excursion" msprop:Generator_RowChangedName="ExcursionRowChanged" msprop:Generator_RowEvArgName="ExcursionRowChangeEvent" msprop:Generator_RowClassName="ExcursionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
