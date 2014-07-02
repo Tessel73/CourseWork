@@ -28,17 +28,35 @@ namespace OOP_Course_Work {
         
         private ContractDataTable tableContract;
         
+        private ContractClientDataTable tableContractClient;
+        
+        private ContractHotelDataTable tableContractHotel;
+        
+        private ContractTurDataTable tableContractTur;
+        
         private ExcursionDataTable tableExcursion;
+        
+        private ExcursionTurDataTable tableExcursionTur;
         
         private HotelDataTable tableHotel;
         
         private TurDataTable tableTur;
         
-        private global::System.Data.DataRelation relationFK_ContractClient;
+        private global::System.Data.DataRelation relationFK_ContractClient_Client;
         
-        private global::System.Data.DataRelation relationFK_ContractHotel;
+        private global::System.Data.DataRelation relationFK_ContractClient_Contract;
         
-        private global::System.Data.DataRelation relationFK_ContractTur;
+        private global::System.Data.DataRelation relationFK_ContractHotel_Contract;
+        
+        private global::System.Data.DataRelation relationFK_ContractHotel_Hotel;
+        
+        private global::System.Data.DataRelation relationFK_ContractTur_Contract;
+        
+        private global::System.Data.DataRelation relationFK_ContractTur_Tur;
+        
+        private global::System.Data.DataRelation relationFK_ExcursionTur_Excursion;
+        
+        private global::System.Data.DataRelation relationFK_ExcursionTur_Tur;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -74,8 +92,20 @@ namespace OOP_Course_Work {
                 if ((ds.Tables["Contract"] != null)) {
                     base.Tables.Add(new ContractDataTable(ds.Tables["Contract"]));
                 }
+                if ((ds.Tables["ContractClient"] != null)) {
+                    base.Tables.Add(new ContractClientDataTable(ds.Tables["ContractClient"]));
+                }
+                if ((ds.Tables["ContractHotel"] != null)) {
+                    base.Tables.Add(new ContractHotelDataTable(ds.Tables["ContractHotel"]));
+                }
+                if ((ds.Tables["ContractTur"] != null)) {
+                    base.Tables.Add(new ContractTurDataTable(ds.Tables["ContractTur"]));
+                }
                 if ((ds.Tables["Excursion"] != null)) {
                     base.Tables.Add(new ExcursionDataTable(ds.Tables["Excursion"]));
+                }
+                if ((ds.Tables["ExcursionTur"] != null)) {
+                    base.Tables.Add(new ExcursionTurDataTable(ds.Tables["ExcursionTur"]));
                 }
                 if ((ds.Tables["Hotel"] != null)) {
                     base.Tables.Add(new HotelDataTable(ds.Tables["Hotel"]));
@@ -125,9 +155,49 @@ namespace OOP_Course_Work {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ContractClientDataTable ContractClient {
+            get {
+                return this.tableContractClient;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ContractHotelDataTable ContractHotel {
+            get {
+                return this.tableContractHotel;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ContractTurDataTable ContractTur {
+            get {
+                return this.tableContractTur;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public ExcursionDataTable Excursion {
             get {
                 return this.tableExcursion;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ExcursionTurDataTable ExcursionTur {
+            get {
+                return this.tableExcursionTur;
             }
         }
         
@@ -224,8 +294,20 @@ namespace OOP_Course_Work {
                 if ((ds.Tables["Contract"] != null)) {
                     base.Tables.Add(new ContractDataTable(ds.Tables["Contract"]));
                 }
+                if ((ds.Tables["ContractClient"] != null)) {
+                    base.Tables.Add(new ContractClientDataTable(ds.Tables["ContractClient"]));
+                }
+                if ((ds.Tables["ContractHotel"] != null)) {
+                    base.Tables.Add(new ContractHotelDataTable(ds.Tables["ContractHotel"]));
+                }
+                if ((ds.Tables["ContractTur"] != null)) {
+                    base.Tables.Add(new ContractTurDataTable(ds.Tables["ContractTur"]));
+                }
                 if ((ds.Tables["Excursion"] != null)) {
                     base.Tables.Add(new ExcursionDataTable(ds.Tables["Excursion"]));
+                }
+                if ((ds.Tables["ExcursionTur"] != null)) {
+                    base.Tables.Add(new ExcursionTurDataTable(ds.Tables["ExcursionTur"]));
                 }
                 if ((ds.Tables["Hotel"] != null)) {
                     base.Tables.Add(new HotelDataTable(ds.Tables["Hotel"]));
@@ -278,10 +360,34 @@ namespace OOP_Course_Work {
                     this.tableContract.InitVars();
                 }
             }
+            this.tableContractClient = ((ContractClientDataTable)(base.Tables["ContractClient"]));
+            if ((initTable == true)) {
+                if ((this.tableContractClient != null)) {
+                    this.tableContractClient.InitVars();
+                }
+            }
+            this.tableContractHotel = ((ContractHotelDataTable)(base.Tables["ContractHotel"]));
+            if ((initTable == true)) {
+                if ((this.tableContractHotel != null)) {
+                    this.tableContractHotel.InitVars();
+                }
+            }
+            this.tableContractTur = ((ContractTurDataTable)(base.Tables["ContractTur"]));
+            if ((initTable == true)) {
+                if ((this.tableContractTur != null)) {
+                    this.tableContractTur.InitVars();
+                }
+            }
             this.tableExcursion = ((ExcursionDataTable)(base.Tables["Excursion"]));
             if ((initTable == true)) {
                 if ((this.tableExcursion != null)) {
                     this.tableExcursion.InitVars();
+                }
+            }
+            this.tableExcursionTur = ((ExcursionTurDataTable)(base.Tables["ExcursionTur"]));
+            if ((initTable == true)) {
+                if ((this.tableExcursionTur != null)) {
+                    this.tableExcursionTur.InitVars();
                 }
             }
             this.tableHotel = ((HotelDataTable)(base.Tables["Hotel"]));
@@ -296,9 +402,14 @@ namespace OOP_Course_Work {
                     this.tableTur.InitVars();
                 }
             }
-            this.relationFK_ContractClient = this.Relations["FK_ContractClient"];
-            this.relationFK_ContractHotel = this.Relations["FK_ContractHotel"];
-            this.relationFK_ContractTur = this.Relations["FK_ContractTur"];
+            this.relationFK_ContractClient_Client = this.Relations["FK_ContractClient_Client"];
+            this.relationFK_ContractClient_Contract = this.Relations["FK_ContractClient_Contract"];
+            this.relationFK_ContractHotel_Contract = this.Relations["FK_ContractHotel_Contract"];
+            this.relationFK_ContractHotel_Hotel = this.Relations["FK_ContractHotel_Hotel"];
+            this.relationFK_ContractTur_Contract = this.Relations["FK_ContractTur_Contract"];
+            this.relationFK_ContractTur_Tur = this.Relations["FK_ContractTur_Tur"];
+            this.relationFK_ExcursionTur_Excursion = this.Relations["FK_ExcursionTur_Excursion"];
+            this.relationFK_ExcursionTur_Tur = this.Relations["FK_ExcursionTur_Tur"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -313,24 +424,52 @@ namespace OOP_Course_Work {
             base.Tables.Add(this.tableClient);
             this.tableContract = new ContractDataTable();
             base.Tables.Add(this.tableContract);
+            this.tableContractClient = new ContractClientDataTable();
+            base.Tables.Add(this.tableContractClient);
+            this.tableContractHotel = new ContractHotelDataTable();
+            base.Tables.Add(this.tableContractHotel);
+            this.tableContractTur = new ContractTurDataTable();
+            base.Tables.Add(this.tableContractTur);
             this.tableExcursion = new ExcursionDataTable();
             base.Tables.Add(this.tableExcursion);
+            this.tableExcursionTur = new ExcursionTurDataTable();
+            base.Tables.Add(this.tableExcursionTur);
             this.tableHotel = new HotelDataTable();
             base.Tables.Add(this.tableHotel);
             this.tableTur = new TurDataTable();
             base.Tables.Add(this.tableTur);
-            this.relationFK_ContractClient = new global::System.Data.DataRelation("FK_ContractClient", new global::System.Data.DataColumn[] {
+            this.relationFK_ContractClient_Client = new global::System.Data.DataRelation("FK_ContractClient_Client", new global::System.Data.DataColumn[] {
                         this.tableClient.ClientIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableContract.Client_ClientIDColumn}, false);
-            this.Relations.Add(this.relationFK_ContractClient);
-            this.relationFK_ContractHotel = new global::System.Data.DataRelation("FK_ContractHotel", new global::System.Data.DataColumn[] {
+                        this.tableContractClient.Client_ClientIDColumn}, false);
+            this.Relations.Add(this.relationFK_ContractClient_Client);
+            this.relationFK_ContractClient_Contract = new global::System.Data.DataRelation("FK_ContractClient_Contract", new global::System.Data.DataColumn[] {
+                        this.tableContract.ContractIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableContractClient.ContractClient_Client_ContractIDColumn}, false);
+            this.Relations.Add(this.relationFK_ContractClient_Contract);
+            this.relationFK_ContractHotel_Contract = new global::System.Data.DataRelation("FK_ContractHotel_Contract", new global::System.Data.DataColumn[] {
+                        this.tableContract.ContractIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableContractHotel.ContractHotel_Hotel_ContractIDColumn}, false);
+            this.Relations.Add(this.relationFK_ContractHotel_Contract);
+            this.relationFK_ContractHotel_Hotel = new global::System.Data.DataRelation("FK_ContractHotel_Hotel", new global::System.Data.DataColumn[] {
                         this.tableHotel.HotelIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableContract.Hotel_HotelIDColumn}, false);
-            this.Relations.Add(this.relationFK_ContractHotel);
-            this.relationFK_ContractTur = new global::System.Data.DataRelation("FK_ContractTur", new global::System.Data.DataColumn[] {
+                        this.tableContractHotel.Hotel_HotelIDColumn}, false);
+            this.Relations.Add(this.relationFK_ContractHotel_Hotel);
+            this.relationFK_ContractTur_Contract = new global::System.Data.DataRelation("FK_ContractTur_Contract", new global::System.Data.DataColumn[] {
+                        this.tableContract.ContractIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableContractTur.ContractTur_Tur_ContractIDColumn}, false);
+            this.Relations.Add(this.relationFK_ContractTur_Contract);
+            this.relationFK_ContractTur_Tur = new global::System.Data.DataRelation("FK_ContractTur_Tur", new global::System.Data.DataColumn[] {
                         this.tableTur.TurIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableContract.Tur_TurIDColumn}, false);
-            this.Relations.Add(this.relationFK_ContractTur);
+                        this.tableContractTur.Tur_TurIDColumn}, false);
+            this.Relations.Add(this.relationFK_ContractTur_Tur);
+            this.relationFK_ExcursionTur_Excursion = new global::System.Data.DataRelation("FK_ExcursionTur_Excursion", new global::System.Data.DataColumn[] {
+                        this.tableExcursion.ExcursionIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExcursionTur.Excursion_ExcursionIDColumn}, false);
+            this.Relations.Add(this.relationFK_ExcursionTur_Excursion);
+            this.relationFK_ExcursionTur_Tur = new global::System.Data.DataRelation("FK_ExcursionTur_Tur", new global::System.Data.DataColumn[] {
+                        this.tableTur.TurIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableExcursionTur.Tur_TurIDColumn}, false);
+            this.Relations.Add(this.relationFK_ExcursionTur_Tur);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -347,7 +486,31 @@ namespace OOP_Course_Work {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeContractClient() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeContractHotel() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeContractTur() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeExcursion() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeExcursionTur() {
             return false;
         }
         
@@ -425,7 +588,19 @@ namespace OOP_Course_Work {
         public delegate void ContractRowChangeEventHandler(object sender, ContractRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ContractClientRowChangeEventHandler(object sender, ContractClientRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ContractHotelRowChangeEventHandler(object sender, ContractHotelRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ContractTurRowChangeEventHandler(object sender, ContractTurRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ExcursionRowChangeEventHandler(object sender, ExcursionRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ExcursionTurRowChangeEventHandler(object sender, ExcursionTurRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void HotelRowChangeEventHandler(object sender, HotelRowChangeEvent e);
@@ -764,11 +939,7 @@ namespace OOP_Course_Work {
             
             private global::System.Data.DataColumn columnTotalCost;
             
-            private global::System.Data.DataColumn columnClient_ClientID;
-            
-            private global::System.Data.DataColumn columnTur_TurID;
-            
-            private global::System.Data.DataColumn columnHotel_HotelID;
+            private global::System.Data.DataColumn columnDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -861,25 +1032,9 @@ namespace OOP_Course_Work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Client_ClientIDColumn {
+            public global::System.Data.DataColumn DateColumn {
                 get {
-                    return this.columnClient_ClientID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Tur_TurIDColumn {
-                get {
-                    return this.columnTur_TurID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Hotel_HotelIDColumn {
-                get {
-                    return this.columnHotel_HotelID;
+                    return this.columnDate;
                 }
             }
             
@@ -920,7 +1075,7 @@ namespace OOP_Course_Work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ContractRow AddContractRow(string ClientID, string TurID, string HotelID, int Number, double Cost, double TotalCost, ClientRow parentClientRowByFK_ContractClient, TurRow parentTurRowByFK_ContractTur, HotelRow parentHotelRowByFK_ContractHotel) {
+            public ContractRow AddContractRow(string ClientID, string TurID, string HotelID, int Number, double Cost, double TotalCost, System.DateTime Date) {
                 ContractRow rowContractRow = ((ContractRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -930,18 +1085,7 @@ namespace OOP_Course_Work {
                         Number,
                         Cost,
                         TotalCost,
-                        null,
-                        null,
-                        null};
-                if ((parentClientRowByFK_ContractClient != null)) {
-                    columnValuesArray[7] = parentClientRowByFK_ContractClient[0];
-                }
-                if ((parentTurRowByFK_ContractTur != null)) {
-                    columnValuesArray[8] = parentTurRowByFK_ContractTur[0];
-                }
-                if ((parentHotelRowByFK_ContractHotel != null)) {
-                    columnValuesArray[9] = parentHotelRowByFK_ContractHotel[0];
-                }
+                        Date};
                 rowContractRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowContractRow);
                 return rowContractRow;
@@ -978,9 +1122,7 @@ namespace OOP_Course_Work {
                 this.columnNumber = base.Columns["Number"];
                 this.columnCost = base.Columns["Cost"];
                 this.columnTotalCost = base.Columns["TotalCost"];
-                this.columnClient_ClientID = base.Columns["Client_ClientID"];
-                this.columnTur_TurID = base.Columns["Tur_TurID"];
-                this.columnHotel_HotelID = base.Columns["Hotel_HotelID"];
+                this.columnDate = base.Columns["Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1000,12 +1142,8 @@ namespace OOP_Course_Work {
                 base.Columns.Add(this.columnCost);
                 this.columnTotalCost = new global::System.Data.DataColumn("TotalCost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCost);
-                this.columnClient_ClientID = new global::System.Data.DataColumn("Client_ClientID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClient_ClientID);
-                this.columnTur_TurID = new global::System.Data.DataColumn("Tur_TurID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTur_TurID);
-                this.columnHotel_HotelID = new global::System.Data.DataColumn("Hotel_HotelID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHotel_HotelID);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnContractID}, true));
                 this.columnContractID.AutoIncrement = true;
@@ -1022,9 +1160,7 @@ namespace OOP_Course_Work {
                 this.columnHotelID.MaxLength = 2147483647;
                 this.columnNumber.AllowDBNull = false;
                 this.columnCost.AllowDBNull = false;
-                this.columnClient_ClientID.AllowDBNull = false;
-                this.columnTur_TurID.AllowDBNull = false;
-                this.columnHotel_HotelID.AllowDBNull = false;
+                this.columnDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1111,6 +1247,846 @@ namespace OOP_Course_Work {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ContractDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ContractClientDataTable : global::System.Data.TypedTableBase<ContractClientRow> {
+            
+            private global::System.Data.DataColumn columnContractClient_Client_ContractID;
+            
+            private global::System.Data.DataColumn columnClient_ClientID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientDataTable() {
+                this.TableName = "ContractClient";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ContractClientDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ContractClientDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ContractClient_Client_ContractIDColumn {
+                get {
+                    return this.columnContractClient_Client_ContractID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Client_ClientIDColumn {
+                get {
+                    return this.columnClient_ClientID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRow this[int index] {
+                get {
+                    return ((ContractClientRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractClientRowChangeEventHandler ContractClientRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractClientRowChangeEventHandler ContractClientRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractClientRowChangeEventHandler ContractClientRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractClientRowChangeEventHandler ContractClientRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddContractClientRow(ContractClientRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRow AddContractClientRow(ContractRow parentContractRowByFK_ContractClient_Contract, ClientRow parentClientRowByFK_ContractClient_Client) {
+                ContractClientRow rowContractClientRow = ((ContractClientRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null};
+                if ((parentContractRowByFK_ContractClient_Contract != null)) {
+                    columnValuesArray[0] = parentContractRowByFK_ContractClient_Contract[0];
+                }
+                if ((parentClientRowByFK_ContractClient_Client != null)) {
+                    columnValuesArray[1] = parentClientRowByFK_ContractClient_Client[0];
+                }
+                rowContractClientRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowContractClientRow);
+                return rowContractClientRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRow FindByContractClient_Client_ContractIDClient_ClientID(int ContractClient_Client_ContractID, int Client_ClientID) {
+                return ((ContractClientRow)(this.Rows.Find(new object[] {
+                            ContractClient_Client_ContractID,
+                            Client_ClientID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ContractClientDataTable cln = ((ContractClientDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ContractClientDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnContractClient_Client_ContractID = base.Columns["ContractClient_Client_ContractID"];
+                this.columnClient_ClientID = base.Columns["Client_ClientID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnContractClient_Client_ContractID = new global::System.Data.DataColumn("ContractClient_Client_ContractID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContractClient_Client_ContractID);
+                this.columnClient_ClientID = new global::System.Data.DataColumn("Client_ClientID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClient_ClientID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnContractClient_Client_ContractID,
+                                this.columnClient_ClientID}, true));
+                this.columnContractClient_Client_ContractID.AllowDBNull = false;
+                this.columnClient_ClientID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRow NewContractClientRow() {
+                return ((ContractClientRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ContractClientRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ContractClientRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ContractClientRowChanged != null)) {
+                    this.ContractClientRowChanged(this, new ContractClientRowChangeEvent(((ContractClientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ContractClientRowChanging != null)) {
+                    this.ContractClientRowChanging(this, new ContractClientRowChangeEvent(((ContractClientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ContractClientRowDeleted != null)) {
+                    this.ContractClientRowDeleted(this, new ContractClientRowChangeEvent(((ContractClientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ContractClientRowDeleting != null)) {
+                    this.ContractClientRowDeleting(this, new ContractClientRowChangeEvent(((ContractClientRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveContractClientRow(ContractClientRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DBDataSet ds = new DBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ContractClientDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ContractHotelDataTable : global::System.Data.TypedTableBase<ContractHotelRow> {
+            
+            private global::System.Data.DataColumn columnContractHotel_Hotel_ContractID;
+            
+            private global::System.Data.DataColumn columnHotel_HotelID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelDataTable() {
+                this.TableName = "ContractHotel";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ContractHotelDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ContractHotelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ContractHotel_Hotel_ContractIDColumn {
+                get {
+                    return this.columnContractHotel_Hotel_ContractID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Hotel_HotelIDColumn {
+                get {
+                    return this.columnHotel_HotelID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRow this[int index] {
+                get {
+                    return ((ContractHotelRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractHotelRowChangeEventHandler ContractHotelRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractHotelRowChangeEventHandler ContractHotelRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractHotelRowChangeEventHandler ContractHotelRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractHotelRowChangeEventHandler ContractHotelRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddContractHotelRow(ContractHotelRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRow AddContractHotelRow(ContractRow parentContractRowByFK_ContractHotel_Contract, HotelRow parentHotelRowByFK_ContractHotel_Hotel) {
+                ContractHotelRow rowContractHotelRow = ((ContractHotelRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null};
+                if ((parentContractRowByFK_ContractHotel_Contract != null)) {
+                    columnValuesArray[0] = parentContractRowByFK_ContractHotel_Contract[0];
+                }
+                if ((parentHotelRowByFK_ContractHotel_Hotel != null)) {
+                    columnValuesArray[1] = parentHotelRowByFK_ContractHotel_Hotel[0];
+                }
+                rowContractHotelRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowContractHotelRow);
+                return rowContractHotelRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRow FindByContractHotel_Hotel_ContractIDHotel_HotelID(int ContractHotel_Hotel_ContractID, int Hotel_HotelID) {
+                return ((ContractHotelRow)(this.Rows.Find(new object[] {
+                            ContractHotel_Hotel_ContractID,
+                            Hotel_HotelID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ContractHotelDataTable cln = ((ContractHotelDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ContractHotelDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnContractHotel_Hotel_ContractID = base.Columns["ContractHotel_Hotel_ContractID"];
+                this.columnHotel_HotelID = base.Columns["Hotel_HotelID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnContractHotel_Hotel_ContractID = new global::System.Data.DataColumn("ContractHotel_Hotel_ContractID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContractHotel_Hotel_ContractID);
+                this.columnHotel_HotelID = new global::System.Data.DataColumn("Hotel_HotelID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHotel_HotelID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnContractHotel_Hotel_ContractID,
+                                this.columnHotel_HotelID}, true));
+                this.columnContractHotel_Hotel_ContractID.AllowDBNull = false;
+                this.columnHotel_HotelID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRow NewContractHotelRow() {
+                return ((ContractHotelRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ContractHotelRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ContractHotelRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ContractHotelRowChanged != null)) {
+                    this.ContractHotelRowChanged(this, new ContractHotelRowChangeEvent(((ContractHotelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ContractHotelRowChanging != null)) {
+                    this.ContractHotelRowChanging(this, new ContractHotelRowChangeEvent(((ContractHotelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ContractHotelRowDeleted != null)) {
+                    this.ContractHotelRowDeleted(this, new ContractHotelRowChangeEvent(((ContractHotelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ContractHotelRowDeleting != null)) {
+                    this.ContractHotelRowDeleting(this, new ContractHotelRowChangeEvent(((ContractHotelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveContractHotelRow(ContractHotelRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DBDataSet ds = new DBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ContractHotelDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ContractTurDataTable : global::System.Data.TypedTableBase<ContractTurRow> {
+            
+            private global::System.Data.DataColumn columnContractTur_Tur_ContractID;
+            
+            private global::System.Data.DataColumn columnTur_TurID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurDataTable() {
+                this.TableName = "ContractTur";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ContractTurDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ContractTurDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ContractTur_Tur_ContractIDColumn {
+                get {
+                    return this.columnContractTur_Tur_ContractID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Tur_TurIDColumn {
+                get {
+                    return this.columnTur_TurID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRow this[int index] {
+                get {
+                    return ((ContractTurRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractTurRowChangeEventHandler ContractTurRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractTurRowChangeEventHandler ContractTurRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractTurRowChangeEventHandler ContractTurRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ContractTurRowChangeEventHandler ContractTurRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddContractTurRow(ContractTurRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRow AddContractTurRow(ContractRow parentContractRowByFK_ContractTur_Contract, TurRow parentTurRowByFK_ContractTur_Tur) {
+                ContractTurRow rowContractTurRow = ((ContractTurRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null};
+                if ((parentContractRowByFK_ContractTur_Contract != null)) {
+                    columnValuesArray[0] = parentContractRowByFK_ContractTur_Contract[0];
+                }
+                if ((parentTurRowByFK_ContractTur_Tur != null)) {
+                    columnValuesArray[1] = parentTurRowByFK_ContractTur_Tur[0];
+                }
+                rowContractTurRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowContractTurRow);
+                return rowContractTurRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRow FindByContractTur_Tur_ContractIDTur_TurID(int ContractTur_Tur_ContractID, int Tur_TurID) {
+                return ((ContractTurRow)(this.Rows.Find(new object[] {
+                            ContractTur_Tur_ContractID,
+                            Tur_TurID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ContractTurDataTable cln = ((ContractTurDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ContractTurDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnContractTur_Tur_ContractID = base.Columns["ContractTur_Tur_ContractID"];
+                this.columnTur_TurID = base.Columns["Tur_TurID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnContractTur_Tur_ContractID = new global::System.Data.DataColumn("ContractTur_Tur_ContractID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContractTur_Tur_ContractID);
+                this.columnTur_TurID = new global::System.Data.DataColumn("Tur_TurID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTur_TurID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnContractTur_Tur_ContractID,
+                                this.columnTur_TurID}, true));
+                this.columnContractTur_Tur_ContractID.AllowDBNull = false;
+                this.columnTur_TurID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRow NewContractTurRow() {
+                return ((ContractTurRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ContractTurRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ContractTurRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ContractTurRowChanged != null)) {
+                    this.ContractTurRowChanged(this, new ContractTurRowChangeEvent(((ContractTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ContractTurRowChanging != null)) {
+                    this.ContractTurRowChanging(this, new ContractTurRowChangeEvent(((ContractTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ContractTurRowDeleted != null)) {
+                    this.ContractTurRowDeleted(this, new ContractTurRowChangeEvent(((ContractTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ContractTurRowDeleting != null)) {
+                    this.ContractTurRowDeleting(this, new ContractTurRowChangeEvent(((ContractTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveContractTurRow(ContractTurRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DBDataSet ds = new DBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ContractTurDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1463,6 +2439,286 @@ namespace OOP_Course_Work {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ExcursionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ExcursionTurDataTable : global::System.Data.TypedTableBase<ExcursionTurRow> {
+            
+            private global::System.Data.DataColumn columnExcursion_ExcursionID;
+            
+            private global::System.Data.DataColumn columnTur_TurID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurDataTable() {
+                this.TableName = "ExcursionTur";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ExcursionTurDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ExcursionTurDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Excursion_ExcursionIDColumn {
+                get {
+                    return this.columnExcursion_ExcursionID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Tur_TurIDColumn {
+                get {
+                    return this.columnTur_TurID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow this[int index] {
+                get {
+                    return ((ExcursionTurRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExcursionTurRowChangeEventHandler ExcursionTurRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExcursionTurRowChangeEventHandler ExcursionTurRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExcursionTurRowChangeEventHandler ExcursionTurRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ExcursionTurRowChangeEventHandler ExcursionTurRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddExcursionTurRow(ExcursionTurRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow AddExcursionTurRow(ExcursionRow parentExcursionRowByFK_ExcursionTur_Excursion, TurRow parentTurRowByFK_ExcursionTur_Tur) {
+                ExcursionTurRow rowExcursionTurRow = ((ExcursionTurRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null};
+                if ((parentExcursionRowByFK_ExcursionTur_Excursion != null)) {
+                    columnValuesArray[0] = parentExcursionRowByFK_ExcursionTur_Excursion[0];
+                }
+                if ((parentTurRowByFK_ExcursionTur_Tur != null)) {
+                    columnValuesArray[1] = parentTurRowByFK_ExcursionTur_Tur[0];
+                }
+                rowExcursionTurRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowExcursionTurRow);
+                return rowExcursionTurRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow FindByExcursion_ExcursionIDTur_TurID(int Excursion_ExcursionID, int Tur_TurID) {
+                return ((ExcursionTurRow)(this.Rows.Find(new object[] {
+                            Excursion_ExcursionID,
+                            Tur_TurID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ExcursionTurDataTable cln = ((ExcursionTurDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ExcursionTurDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnExcursion_ExcursionID = base.Columns["Excursion_ExcursionID"];
+                this.columnTur_TurID = base.Columns["Tur_TurID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnExcursion_ExcursionID = new global::System.Data.DataColumn("Excursion_ExcursionID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExcursion_ExcursionID);
+                this.columnTur_TurID = new global::System.Data.DataColumn("Tur_TurID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTur_TurID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnExcursion_ExcursionID,
+                                this.columnTur_TurID}, true));
+                this.columnExcursion_ExcursionID.AllowDBNull = false;
+                this.columnTur_TurID.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow NewExcursionTurRow() {
+                return ((ExcursionTurRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ExcursionTurRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ExcursionTurRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ExcursionTurRowChanged != null)) {
+                    this.ExcursionTurRowChanged(this, new ExcursionTurRowChangeEvent(((ExcursionTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ExcursionTurRowChanging != null)) {
+                    this.ExcursionTurRowChanging(this, new ExcursionTurRowChangeEvent(((ExcursionTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ExcursionTurRowDeleted != null)) {
+                    this.ExcursionTurRowDeleted(this, new ExcursionTurRowChangeEvent(((ExcursionTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ExcursionTurRowDeleting != null)) {
+                    this.ExcursionTurRowDeleting(this, new ExcursionTurRowChangeEvent(((ExcursionTurRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveExcursionTurRow(ExcursionTurRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DBDataSet ds = new DBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ExcursionTurDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2253,12 +3509,12 @@ namespace OOP_Course_Work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ContractRow[] GetContractRows() {
-                if ((this.Table.ChildRelations["FK_ContractClient"] == null)) {
-                    return new ContractRow[0];
+            public ContractClientRow[] GetContractClientRows() {
+                if ((this.Table.ChildRelations["FK_ContractClient_Client"] == null)) {
+                    return new ContractClientRow[0];
                 }
                 else {
-                    return ((ContractRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractClient"])));
+                    return ((ContractClientRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractClient_Client"])));
                 }
             }
         }
@@ -2361,67 +3617,12 @@ namespace OOP_Course_Work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Client_ClientID {
+            public System.DateTime Date {
                 get {
-                    return ((int)(this[this.tableContract.Client_ClientIDColumn]));
+                    return ((global::System.DateTime)(this[this.tableContract.DateColumn]));
                 }
                 set {
-                    this[this.tableContract.Client_ClientIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Tur_TurID {
-                get {
-                    return ((int)(this[this.tableContract.Tur_TurIDColumn]));
-                }
-                set {
-                    this[this.tableContract.Tur_TurIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Hotel_HotelID {
-                get {
-                    return ((int)(this[this.tableContract.Hotel_HotelIDColumn]));
-                }
-                set {
-                    this[this.tableContract.Hotel_HotelIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClientRow ClientRow {
-                get {
-                    return ((ClientRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractClient"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractClient"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRow HotelRow {
-                get {
-                    return ((HotelRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractHotel"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractHotel"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TurRow TurRow {
-                get {
-                    return ((TurRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractTur"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractTur"]);
+                    this[this.tableContract.DateColumn] = value;
                 }
             }
             
@@ -2435,6 +3636,216 @@ namespace OOP_Course_Work {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalCostNull() {
                 this[this.tableContract.TotalCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRow[] GetContractClientRows() {
+                if ((this.Table.ChildRelations["FK_ContractClient_Contract"] == null)) {
+                    return new ContractClientRow[0];
+                }
+                else {
+                    return ((ContractClientRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractClient_Contract"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRow[] GetContractHotelRows() {
+                if ((this.Table.ChildRelations["FK_ContractHotel_Contract"] == null)) {
+                    return new ContractHotelRow[0];
+                }
+                else {
+                    return ((ContractHotelRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractHotel_Contract"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRow[] GetContractTurRows() {
+                if ((this.Table.ChildRelations["FK_ContractTur_Contract"] == null)) {
+                    return new ContractTurRow[0];
+                }
+                else {
+                    return ((ContractTurRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractTur_Contract"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ContractClientRow : global::System.Data.DataRow {
+            
+            private ContractClientDataTable tableContractClient;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ContractClientRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableContractClient = ((ContractClientDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ContractClient_Client_ContractID {
+                get {
+                    return ((int)(this[this.tableContractClient.ContractClient_Client_ContractIDColumn]));
+                }
+                set {
+                    this[this.tableContractClient.ContractClient_Client_ContractIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Client_ClientID {
+                get {
+                    return ((int)(this[this.tableContractClient.Client_ClientIDColumn]));
+                }
+                set {
+                    this[this.tableContractClient.Client_ClientIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ClientRow ClientRow {
+                get {
+                    return ((ClientRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractClient_Client"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractClient_Client"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractRow ContractRow {
+                get {
+                    return ((ContractRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractClient_Contract"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractClient_Contract"]);
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ContractHotelRow : global::System.Data.DataRow {
+            
+            private ContractHotelDataTable tableContractHotel;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ContractHotelRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableContractHotel = ((ContractHotelDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ContractHotel_Hotel_ContractID {
+                get {
+                    return ((int)(this[this.tableContractHotel.ContractHotel_Hotel_ContractIDColumn]));
+                }
+                set {
+                    this[this.tableContractHotel.ContractHotel_Hotel_ContractIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Hotel_HotelID {
+                get {
+                    return ((int)(this[this.tableContractHotel.Hotel_HotelIDColumn]));
+                }
+                set {
+                    this[this.tableContractHotel.Hotel_HotelIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractRow ContractRow {
+                get {
+                    return ((ContractRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractHotel_Contract"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractHotel_Contract"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public HotelRow HotelRow {
+                get {
+                    return ((HotelRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractHotel_Hotel"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractHotel_Hotel"]);
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ContractTurRow : global::System.Data.DataRow {
+            
+            private ContractTurDataTable tableContractTur;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ContractTurRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableContractTur = ((ContractTurDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ContractTur_Tur_ContractID {
+                get {
+                    return ((int)(this[this.tableContractTur.ContractTur_Tur_ContractIDColumn]));
+                }
+                set {
+                    this[this.tableContractTur.ContractTur_Tur_ContractIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Tur_TurID {
+                get {
+                    return ((int)(this[this.tableContractTur.Tur_TurIDColumn]));
+                }
+                set {
+                    this[this.tableContractTur.Tur_TurIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractRow ContractRow {
+                get {
+                    return ((ContractRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractTur_Contract"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractTur_Contract"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TurRow TurRow {
+                get {
+                    return ((TurRow)(this.GetParentRow(this.Table.ParentRelations["FK_ContractTur_Tur"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ContractTur_Tur"]);
+                }
             }
         }
         
@@ -2596,6 +4007,76 @@ namespace OOP_Course_Work {
             public void SetNoteNull() {
                 this[this.tableExcursion.NoteColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow[] GetExcursionTurRows() {
+                if ((this.Table.ChildRelations["FK_ExcursionTur_Excursion"] == null)) {
+                    return new ExcursionTurRow[0];
+                }
+                else {
+                    return ((ExcursionTurRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ExcursionTur_Excursion"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ExcursionTurRow : global::System.Data.DataRow {
+            
+            private ExcursionTurDataTable tableExcursionTur;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ExcursionTurRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableExcursionTur = ((ExcursionTurDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Excursion_ExcursionID {
+                get {
+                    return ((int)(this[this.tableExcursionTur.Excursion_ExcursionIDColumn]));
+                }
+                set {
+                    this[this.tableExcursionTur.Excursion_ExcursionIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Tur_TurID {
+                get {
+                    return ((int)(this[this.tableExcursionTur.Tur_TurIDColumn]));
+                }
+                set {
+                    this[this.tableExcursionTur.Tur_TurIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionRow ExcursionRow {
+                get {
+                    return ((ExcursionRow)(this.GetParentRow(this.Table.ParentRelations["FK_ExcursionTur_Excursion"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ExcursionTur_Excursion"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TurRow TurRow {
+                get {
+                    return ((TurRow)(this.GetParentRow(this.Table.ParentRelations["FK_ExcursionTur_Tur"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ExcursionTur_Tur"]);
+                }
+            }
         }
         
         /// <summary>
@@ -2703,12 +4184,12 @@ namespace OOP_Course_Work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ContractRow[] GetContractRows() {
-                if ((this.Table.ChildRelations["FK_ContractHotel"] == null)) {
-                    return new ContractRow[0];
+            public ContractHotelRow[] GetContractHotelRows() {
+                if ((this.Table.ChildRelations["FK_ContractHotel_Hotel"] == null)) {
+                    return new ContractHotelRow[0];
                 }
                 else {
-                    return ((ContractRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractHotel"])));
+                    return ((ContractHotelRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractHotel_Hotel"])));
                 }
             }
         }
@@ -2868,12 +4349,23 @@ namespace OOP_Course_Work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ContractRow[] GetContractRows() {
-                if ((this.Table.ChildRelations["FK_ContractTur"] == null)) {
-                    return new ContractRow[0];
+            public ContractTurRow[] GetContractTurRows() {
+                if ((this.Table.ChildRelations["FK_ContractTur_Tur"] == null)) {
+                    return new ContractTurRow[0];
                 }
                 else {
-                    return ((ContractRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractTur"])));
+                    return ((ContractTurRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ContractTur_Tur"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow[] GetExcursionTurRows() {
+                if ((this.Table.ChildRelations["FK_ExcursionTur_Tur"] == null)) {
+                    return new ExcursionTurRow[0];
+                }
+                else {
+                    return ((ExcursionTurRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ExcursionTur_Tur"])));
                 }
             }
         }
@@ -2950,6 +4442,108 @@ namespace OOP_Course_Work {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ContractClientRowChangeEvent : global::System.EventArgs {
+            
+            private ContractClientRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRowChangeEvent(ContractClientRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractClientRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ContractHotelRowChangeEvent : global::System.EventArgs {
+            
+            private ContractHotelRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRowChangeEvent(ContractHotelRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractHotelRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ContractTurRowChangeEvent : global::System.EventArgs {
+            
+            private ContractTurRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRowChangeEvent(ContractTurRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ContractTurRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class ExcursionRowChangeEvent : global::System.EventArgs {
             
             private ExcursionRow eventRow;
@@ -2966,6 +4560,40 @@ namespace OOP_Course_Work {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ExcursionRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ExcursionTurRowChangeEvent : global::System.EventArgs {
+            
+            private ExcursionTurRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRowChangeEvent(ExcursionTurRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ExcursionTurRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3514,26 +5142,22 @@ namespace OOP_Course_Work.DBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("Cost", "Cost");
             tableMapping.ColumnMappings.Add("TotalCost", "TotalCost");
-            tableMapping.ColumnMappings.Add("Client_ClientID", "Client_ClientID");
-            tableMapping.ColumnMappings.Add("Tur_TurID", "Tur_TurID");
-            tableMapping.ColumnMappings.Add("Hotel_HotelID", "Hotel_HotelID");
+            tableMapping.ColumnMappings.Add("Date", "Date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Contract] WHERE (([ContractID] = @Original_ContractID) AND ([Number] = @Original_Number) AND ([Cost] = @Original_Cost) AND ((@IsNull_TotalCost = 1 AND [TotalCost] IS NULL) OR ([TotalCost] = @Original_TotalCost)) AND ([Client_ClientID] = @Original_Client_ClientID) AND ([Tur_TurID] = @Original_Tur_TurID) AND ([Hotel_HotelID] = @Original_Hotel_HotelID))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Contract] WHERE (([ContractID] = @Original_ContractID) AND ([Number] = @Original_Number) AND ([Cost] = @Original_Cost) AND ((@IsNull_TotalCost = 1 AND [TotalCost] IS NULL) OR ([TotalCost] = @Original_TotalCost)) AND ([Date] = @Original_Date))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TotalCost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalCost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Contract] ([ClientID], [TurID], [HotelID], [Number], [Cost], [TotalCost], [Client_ClientID], [Tur_TurID], [Hotel_HotelID]) VALUES (@ClientID, @TurID, @HotelID, @Number, @Cost, @TotalCost, @Client_ClientID, @Tur_TurID, @Hotel_HotelID);
-SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_ClientID, Tur_TurID, Hotel_HotelID FROM Contract WHERE (ContractID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Contract] ([ClientID], [TurID], [HotelID], [Number], [Cost], [TotalCost], [Date]) VALUES (@ClientID, @TurID, @HotelID, @Number, @Cost, @TotalCost, @Date);
+SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Date FROM Contract WHERE (ContractID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TurID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3541,13 +5165,11 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Contract] SET [ClientID] = @ClientID, [TurID] = @TurID, [HotelID] = @HotelID, [Number] = @Number, [Cost] = @Cost, [TotalCost] = @TotalCost, [Client_ClientID] = @Client_ClientID, [Tur_TurID] = @Tur_TurID, [Hotel_HotelID] = @Hotel_HotelID WHERE (([ContractID] = @Original_ContractID) AND ([Number] = @Original_Number) AND ([Cost] = @Original_Cost) AND ((@IsNull_TotalCost = 1 AND [TotalCost] IS NULL) OR ([TotalCost] = @Original_TotalCost)) AND ([Client_ClientID] = @Original_Client_ClientID) AND ([Tur_TurID] = @Original_Tur_TurID) AND ([Hotel_HotelID] = @Original_Hotel_HotelID));
-SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_ClientID, Tur_TurID, Hotel_HotelID FROM Contract WHERE (ContractID = @ContractID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Contract] SET [ClientID] = @ClientID, [TurID] = @TurID, [HotelID] = @HotelID, [Number] = @Number, [Cost] = @Cost, [TotalCost] = @TotalCost, [Date] = @Date WHERE (([ContractID] = @Original_ContractID) AND ([Number] = @Original_Number) AND ([Cost] = @Original_Cost) AND ((@IsNull_TotalCost = 1 AND [TotalCost] IS NULL) OR ([TotalCost] = @Original_TotalCost)) AND ([Date] = @Original_Date));
+SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Date FROM Contract WHERE (ContractID = @ContractID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TurID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3555,17 +5177,13 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TotalCost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalCost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3582,8 +5200,8 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Clie" +
-                "ntID, Tur_TurID, Hotel_HotelID FROM dbo.Contract";
+            this._commandCollection[0].CommandText = "SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Date FROM d" +
+                "bo.Contract";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3644,7 +5262,7 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ContractID, int Original_Number, double Original_Cost, global::System.Nullable<double> Original_TotalCost, int Original_Client_ClientID, int Original_Tur_TurID, int Original_Hotel_HotelID) {
+        public virtual int Delete(int Original_ContractID, int Original_Number, double Original_Cost, global::System.Nullable<double> Original_TotalCost, System.DateTime Original_Date) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ContractID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Number));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((double)(Original_Cost));
@@ -3656,9 +5274,7 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Client_ClientID));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Tur_TurID));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Hotel_HotelID));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3679,7 +5295,7 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ClientID, string TurID, string HotelID, int Number, double Cost, global::System.Nullable<double> TotalCost, int Client_ClientID, int Tur_TurID, int Hotel_HotelID) {
+        public virtual int Insert(string ClientID, string TurID, string HotelID, int Number, double Cost, global::System.Nullable<double> TotalCost, System.DateTime Date) {
             if ((ClientID == null)) {
                 throw new global::System.ArgumentNullException("ClientID");
             }
@@ -3706,9 +5322,7 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Client_ClientID));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Tur_TurID));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Hotel_HotelID));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3729,24 +5343,7 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ClientID, 
-                    string TurID, 
-                    string HotelID, 
-                    int Number, 
-                    double Cost, 
-                    global::System.Nullable<double> TotalCost, 
-                    int Client_ClientID, 
-                    int Tur_TurID, 
-                    int Hotel_HotelID, 
-                    int Original_ContractID, 
-                    int Original_Number, 
-                    double Original_Cost, 
-                    global::System.Nullable<double> Original_TotalCost, 
-                    int Original_Client_ClientID, 
-                    int Original_Tur_TurID, 
-                    int Original_Hotel_HotelID, 
-                    int ContractID) {
+        public virtual int Update(string ClientID, string TurID, string HotelID, int Number, double Cost, global::System.Nullable<double> TotalCost, System.DateTime Date, int Original_ContractID, int Original_Number, double Original_Cost, global::System.Nullable<double> Original_TotalCost, System.DateTime Original_Date, int ContractID) {
             if ((ClientID == null)) {
                 throw new global::System.ArgumentNullException("ClientID");
             }
@@ -3773,24 +5370,20 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Client_ClientID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Tur_TurID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Hotel_HotelID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ContractID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Number));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_Cost));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Date));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ContractID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Number));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Original_Cost));
             if ((Original_TotalCost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_TotalCost.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_TotalCost.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Client_ClientID));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Tur_TurID));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Hotel_HotelID));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(ContractID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ContractID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3811,24 +5404,907 @@ SELECT ContractID, ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ClientID, 
-                    string TurID, 
-                    string HotelID, 
-                    int Number, 
-                    double Cost, 
-                    global::System.Nullable<double> TotalCost, 
-                    int Client_ClientID, 
-                    int Tur_TurID, 
-                    int Hotel_HotelID, 
-                    int Original_ContractID, 
-                    int Original_Number, 
-                    double Original_Cost, 
-                    global::System.Nullable<double> Original_TotalCost, 
-                    int Original_Client_ClientID, 
-                    int Original_Tur_TurID, 
-                    int Original_Hotel_HotelID) {
-            return this.Update(ClientID, TurID, HotelID, Number, Cost, TotalCost, Client_ClientID, Tur_TurID, Hotel_HotelID, Original_ContractID, Original_Number, Original_Cost, Original_TotalCost, Original_Client_ClientID, Original_Tur_TurID, Original_Hotel_HotelID, Original_ContractID);
+        public virtual int Update(string ClientID, string TurID, string HotelID, int Number, double Cost, global::System.Nullable<double> TotalCost, System.DateTime Date, int Original_ContractID, int Original_Number, double Original_Cost, global::System.Nullable<double> Original_TotalCost, System.DateTime Original_Date) {
+            return this.Update(ClientID, TurID, HotelID, Number, Cost, TotalCost, Date, Original_ContractID, Original_Number, Original_Cost, Original_TotalCost, Original_Date, Original_ContractID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ContractClientTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ContractClientTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ContractClient";
+            tableMapping.ColumnMappings.Add("ContractClient_Client_ContractID", "ContractClient_Client_ContractID");
+            tableMapping.ColumnMappings.Add("Client_ClientID", "Client_ClientID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ContractClient] WHERE (([ContractClient_Client_ContractID] = @" +
+                "Original_ContractClient_Client_ContractID) AND ([Client_ClientID] = @Original_Cl" +
+                "ient_ClientID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractClient_Client_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractClient_Client_ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ContractClient] ([ContractClient_Client_ContractID], [Client_ClientID]) VALUES (@ContractClient_Client_ContractID, @Client_ClientID);
+SELECT ContractClient_Client_ContractID, Client_ClientID FROM ContractClient WHERE (Client_ClientID = @Client_ClientID) AND (ContractClient_Client_ContractID = @ContractClient_Client_ContractID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractClient_Client_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractClient_Client_ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ContractClient] SET [ContractClient_Client_ContractID] = @ContractClient_Client_ContractID, [Client_ClientID] = @Client_ClientID WHERE (([ContractClient_Client_ContractID] = @Original_ContractClient_Client_ContractID) AND ([Client_ClientID] = @Original_Client_ClientID));
+SELECT ContractClient_Client_ContractID, Client_ClientID FROM ContractClient WHERE (Client_ClientID = @Client_ClientID) AND (ContractClient_Client_ContractID = @ContractClient_Client_ContractID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractClient_Client_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractClient_Client_ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractClient_Client_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractClient_Client_ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Client_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client_ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::OOP_Course_Work.Properties.Settings.Default.OOP_CourseWork_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ContractClient_Client_ContractID, Client_ClientID FROM dbo.ContractClient";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DBDataSet.ContractClientDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DBDataSet.ContractClientDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DBDataSet.ContractClientDataTable dataTable = new DBDataSet.ContractClientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet.ContractClientDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ContractClient");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ContractClient_Client_ContractID, int Original_Client_ClientID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ContractClient_Client_ContractID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Client_ClientID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ContractClient_Client_ContractID, int Client_ClientID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ContractClient_Client_ContractID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Client_ClientID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ContractClient_Client_ContractID, int Client_ClientID, int Original_ContractClient_Client_ContractID, int Original_Client_ClientID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ContractClient_Client_ContractID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Client_ClientID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ContractClient_Client_ContractID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Client_ClientID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Original_ContractClient_Client_ContractID, int Original_Client_ClientID) {
+            return this.Update(Original_ContractClient_Client_ContractID, Original_Client_ClientID, Original_ContractClient_Client_ContractID, Original_Client_ClientID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ContractHotelTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ContractHotelTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ContractHotel";
+            tableMapping.ColumnMappings.Add("ContractHotel_Hotel_ContractID", "ContractHotel_Hotel_ContractID");
+            tableMapping.ColumnMappings.Add("Hotel_HotelID", "Hotel_HotelID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ContractHotel] WHERE (([ContractHotel_Hotel_ContractID] = @Ori" +
+                "ginal_ContractHotel_Hotel_ContractID) AND ([Hotel_HotelID] = @Original_Hotel_Hot" +
+                "elID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractHotel_Hotel_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractHotel_Hotel_ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ContractHotel] ([ContractHotel_Hotel_ContractID], [Hotel_HotelID]) VALUES (@ContractHotel_Hotel_ContractID, @Hotel_HotelID);
+SELECT ContractHotel_Hotel_ContractID, Hotel_HotelID FROM ContractHotel WHERE (ContractHotel_Hotel_ContractID = @ContractHotel_Hotel_ContractID) AND (Hotel_HotelID = @Hotel_HotelID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractHotel_Hotel_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractHotel_Hotel_ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ContractHotel] SET [ContractHotel_Hotel_ContractID] = @ContractHotel_Hotel_ContractID, [Hotel_HotelID] = @Hotel_HotelID WHERE (([ContractHotel_Hotel_ContractID] = @Original_ContractHotel_Hotel_ContractID) AND ([Hotel_HotelID] = @Original_Hotel_HotelID));
+SELECT ContractHotel_Hotel_ContractID, Hotel_HotelID FROM ContractHotel WHERE (ContractHotel_Hotel_ContractID = @ContractHotel_Hotel_ContractID) AND (Hotel_HotelID = @Hotel_HotelID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractHotel_Hotel_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractHotel_Hotel_ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractHotel_Hotel_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractHotel_Hotel_ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_HotelID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_HotelID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::OOP_Course_Work.Properties.Settings.Default.OOP_CourseWork_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ContractHotel_Hotel_ContractID, Hotel_HotelID FROM dbo.ContractHotel";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DBDataSet.ContractHotelDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DBDataSet.ContractHotelDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DBDataSet.ContractHotelDataTable dataTable = new DBDataSet.ContractHotelDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet.ContractHotelDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ContractHotel");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ContractHotel_Hotel_ContractID, int Original_Hotel_HotelID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ContractHotel_Hotel_ContractID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Hotel_HotelID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ContractHotel_Hotel_ContractID, int Hotel_HotelID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ContractHotel_Hotel_ContractID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Hotel_HotelID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ContractHotel_Hotel_ContractID, int Hotel_HotelID, int Original_ContractHotel_Hotel_ContractID, int Original_Hotel_HotelID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ContractHotel_Hotel_ContractID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Hotel_HotelID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ContractHotel_Hotel_ContractID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Hotel_HotelID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Original_ContractHotel_Hotel_ContractID, int Original_Hotel_HotelID) {
+            return this.Update(Original_ContractHotel_Hotel_ContractID, Original_Hotel_HotelID, Original_ContractHotel_Hotel_ContractID, Original_Hotel_HotelID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ContractTurTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ContractTurTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ContractTur";
+            tableMapping.ColumnMappings.Add("ContractTur_Tur_ContractID", "ContractTur_Tur_ContractID");
+            tableMapping.ColumnMappings.Add("Tur_TurID", "Tur_TurID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ContractTur] WHERE (([ContractTur_Tur_ContractID] = @Original_" +
+                "ContractTur_Tur_ContractID) AND ([Tur_TurID] = @Original_Tur_TurID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractTur_Tur_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractTur_Tur_ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ContractTur] ([ContractTur_Tur_ContractID], [Tur_TurID]) VALUES (@ContractTur_Tur_ContractID, @Tur_TurID);
+SELECT ContractTur_Tur_ContractID, Tur_TurID FROM ContractTur WHERE (ContractTur_Tur_ContractID = @ContractTur_Tur_ContractID) AND (Tur_TurID = @Tur_TurID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractTur_Tur_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractTur_Tur_ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ContractTur] SET [ContractTur_Tur_ContractID] = @ContractTur_Tur_ContractID, [Tur_TurID] = @Tur_TurID WHERE (([ContractTur_Tur_ContractID] = @Original_ContractTur_Tur_ContractID) AND ([Tur_TurID] = @Original_Tur_TurID));
+SELECT ContractTur_Tur_ContractID, Tur_TurID FROM ContractTur WHERE (ContractTur_Tur_ContractID = @ContractTur_Tur_ContractID) AND (Tur_TurID = @Tur_TurID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContractTur_Tur_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractTur_Tur_ContractID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContractTur_Tur_ContractID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContractTur_Tur_ContractID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::OOP_Course_Work.Properties.Settings.Default.OOP_CourseWork_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ContractTur_Tur_ContractID, Tur_TurID FROM dbo.ContractTur";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DBDataSet.ContractTurDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DBDataSet.ContractTurDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DBDataSet.ContractTurDataTable dataTable = new DBDataSet.ContractTurDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet.ContractTurDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ContractTur");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ContractTur_Tur_ContractID, int Original_Tur_TurID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ContractTur_Tur_ContractID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Tur_TurID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ContractTur_Tur_ContractID, int Tur_TurID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ContractTur_Tur_ContractID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Tur_TurID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ContractTur_Tur_ContractID, int Tur_TurID, int Original_ContractTur_Tur_ContractID, int Original_Tur_TurID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ContractTur_Tur_ContractID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Tur_TurID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ContractTur_Tur_ContractID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Tur_TurID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Original_ContractTur_Tur_ContractID, int Original_Tur_TurID) {
+            return this.Update(Original_ContractTur_Tur_ContractID, Original_Tur_TurID, Original_ContractTur_Tur_ContractID, Original_Tur_TurID);
         }
     }
     
@@ -4224,6 +6700,305 @@ SELECT ExcursionID, Name, Rating, Length, Time, Cost, Note FROM Excursion WHERE 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Name, global::System.Nullable<int> Rating, string Length, string Time, double Cost, string Note, int Original_ExcursionID, global::System.Nullable<int> Original_Rating, double Original_Cost) {
             return this.Update(Name, Rating, Length, Time, Cost, Note, Original_ExcursionID, Original_Rating, Original_Cost, Original_ExcursionID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ExcursionTurTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ExcursionTurTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ExcursionTur";
+            tableMapping.ColumnMappings.Add("Excursion_ExcursionID", "Excursion_ExcursionID");
+            tableMapping.ColumnMappings.Add("Tur_TurID", "Tur_TurID");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ExcursionTur] WHERE (([Excursion_ExcursionID] = @Original_Excu" +
+                "rsion_ExcursionID) AND ([Tur_TurID] = @Original_Tur_TurID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Excursion_ExcursionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excursion_ExcursionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ExcursionTur] ([Excursion_ExcursionID], [Tur_TurID]) VALUES (@Excursion_ExcursionID, @Tur_TurID);
+SELECT Excursion_ExcursionID, Tur_TurID FROM ExcursionTur WHERE (Excursion_ExcursionID = @Excursion_ExcursionID) AND (Tur_TurID = @Tur_TurID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excursion_ExcursionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excursion_ExcursionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ExcursionTur] SET [Excursion_ExcursionID] = @Excursion_ExcursionID, [Tur_TurID] = @Tur_TurID WHERE (([Excursion_ExcursionID] = @Original_Excursion_ExcursionID) AND ([Tur_TurID] = @Original_Tur_TurID));
+SELECT Excursion_ExcursionID, Tur_TurID FROM ExcursionTur WHERE (Excursion_ExcursionID = @Excursion_ExcursionID) AND (Tur_TurID = @Tur_TurID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Excursion_ExcursionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excursion_ExcursionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Excursion_ExcursionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Excursion_ExcursionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tur_TurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tur_TurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::OOP_Course_Work.Properties.Settings.Default.OOP_CourseWork_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Excursion_ExcursionID, Tur_TurID FROM dbo.ExcursionTur";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DBDataSet.ExcursionTurDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DBDataSet.ExcursionTurDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DBDataSet.ExcursionTurDataTable dataTable = new DBDataSet.ExcursionTurDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet.ExcursionTurDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DBDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "ExcursionTur");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Excursion_ExcursionID, int Original_Tur_TurID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Excursion_ExcursionID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Tur_TurID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int Excursion_ExcursionID, int Tur_TurID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Excursion_ExcursionID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Tur_TurID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Excursion_ExcursionID, int Tur_TurID, int Original_Excursion_ExcursionID, int Original_Tur_TurID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Excursion_ExcursionID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Tur_TurID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Excursion_ExcursionID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Tur_TurID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Original_Excursion_ExcursionID, int Original_Tur_TurID) {
+            return this.Update(Original_Excursion_ExcursionID, Original_Tur_TurID, Original_Excursion_ExcursionID, Original_Tur_TurID);
         }
     }
     
@@ -4982,7 +7757,15 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
         
         private ContractTableAdapter _contractTableAdapter;
         
+        private ContractClientTableAdapter _contractClientTableAdapter;
+        
+        private ContractHotelTableAdapter _contractHotelTableAdapter;
+        
+        private ContractTurTableAdapter _contractTurTableAdapter;
+        
         private ExcursionTableAdapter _excursionTableAdapter;
+        
+        private ExcursionTurTableAdapter _excursionTurTableAdapter;
         
         private HotelTableAdapter _hotelTableAdapter;
         
@@ -5036,12 +7819,68 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public ContractClientTableAdapter ContractClientTableAdapter {
+            get {
+                return this._contractClientTableAdapter;
+            }
+            set {
+                this._contractClientTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ContractHotelTableAdapter ContractHotelTableAdapter {
+            get {
+                return this._contractHotelTableAdapter;
+            }
+            set {
+                this._contractHotelTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ContractTurTableAdapter ContractTurTableAdapter {
+            get {
+                return this._contractTurTableAdapter;
+            }
+            set {
+                this._contractTurTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public ExcursionTableAdapter ExcursionTableAdapter {
             get {
                 return this._excursionTableAdapter;
             }
             set {
                 this._excursionTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ExcursionTurTableAdapter ExcursionTurTableAdapter {
+            get {
+                return this._excursionTurTableAdapter;
+            }
+            set {
+                this._excursionTurTableAdapter = value;
             }
         }
         
@@ -5100,9 +7939,25 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                             && (this._contractTableAdapter.Connection != null))) {
                     return this._contractTableAdapter.Connection;
                 }
+                if (((this._contractClientTableAdapter != null) 
+                            && (this._contractClientTableAdapter.Connection != null))) {
+                    return this._contractClientTableAdapter.Connection;
+                }
+                if (((this._contractHotelTableAdapter != null) 
+                            && (this._contractHotelTableAdapter.Connection != null))) {
+                    return this._contractHotelTableAdapter.Connection;
+                }
+                if (((this._contractTurTableAdapter != null) 
+                            && (this._contractTurTableAdapter.Connection != null))) {
+                    return this._contractTurTableAdapter.Connection;
+                }
                 if (((this._excursionTableAdapter != null) 
                             && (this._excursionTableAdapter.Connection != null))) {
                     return this._excursionTableAdapter.Connection;
+                }
+                if (((this._excursionTurTableAdapter != null) 
+                            && (this._excursionTurTableAdapter.Connection != null))) {
+                    return this._excursionTurTableAdapter.Connection;
                 }
                 if (((this._hotelTableAdapter != null) 
                             && (this._hotelTableAdapter.Connection != null))) {
@@ -5131,7 +7986,19 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                 if ((this._contractTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._contractClientTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._contractHotelTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._contractTurTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._excursionTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._excursionTurTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._hotelTableAdapter != null)) {
@@ -5160,6 +8027,24 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._contractTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Contract.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._contractTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._excursionTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Excursion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._excursionTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._hotelTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Hotel.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -5178,21 +8063,39 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._contractTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Contract.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._contractClientTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ContractClient.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._contractTableAdapter.Update(updatedRows));
+                    result = (result + this._contractClientTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._excursionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Excursion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._contractHotelTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ContractHotel.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._excursionTableAdapter.Update(updatedRows));
+                    result = (result + this._contractHotelTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._contractTurTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ContractTur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._contractTurTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._excursionTurTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ExcursionTur.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._excursionTurTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5214,22 +8117,6 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._hotelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Hotel.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._hotelTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._turTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Tur.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._turTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._contractTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Contract.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -5246,6 +8133,54 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._hotelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Hotel.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._hotelTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._turTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Tur.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._turTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._contractClientTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ContractClient.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._contractClientTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._contractHotelTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ContractHotel.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._contractHotelTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._contractTurTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ContractTur.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._contractTurTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._excursionTurTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ExcursionTur.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._excursionTurTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -5256,19 +8191,35 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._excursionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Excursion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._excursionTurTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ExcursionTur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._excursionTableAdapter.Update(deletedRows));
+                    result = (result + this._excursionTurTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._contractTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Contract.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._contractTurTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ContractTur.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._contractTableAdapter.Update(deletedRows));
+                    result = (result + this._contractTurTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._contractHotelTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ContractHotel.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._contractHotelTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._contractClientTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ContractClient.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._contractClientTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5285,6 +8236,22 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._hotelTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._excursionTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Excursion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._excursionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._contractTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Contract.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._contractTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5345,8 +8312,28 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
+            if (((this._contractClientTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._contractClientTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
+            if (((this._contractHotelTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._contractHotelTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
+            if (((this._contractTurTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._contractTurTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
             if (((this._excursionTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._excursionTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
+            if (((this._excursionTurTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._excursionTurTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -5410,6 +8397,33 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                         adaptersWithAcceptChangesDuringUpdate.Add(this._contractTableAdapter.Adapter);
                     }
                 }
+                if ((this._contractClientTableAdapter != null)) {
+                    revertConnections.Add(this._contractClientTableAdapter, this._contractClientTableAdapter.Connection);
+                    this._contractClientTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._contractClientTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._contractClientTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._contractClientTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._contractClientTableAdapter.Adapter);
+                    }
+                }
+                if ((this._contractHotelTableAdapter != null)) {
+                    revertConnections.Add(this._contractHotelTableAdapter, this._contractHotelTableAdapter.Connection);
+                    this._contractHotelTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._contractHotelTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._contractHotelTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._contractHotelTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._contractHotelTableAdapter.Adapter);
+                    }
+                }
+                if ((this._contractTurTableAdapter != null)) {
+                    revertConnections.Add(this._contractTurTableAdapter, this._contractTurTableAdapter.Connection);
+                    this._contractTurTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._contractTurTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._contractTurTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._contractTurTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._contractTurTableAdapter.Adapter);
+                    }
+                }
                 if ((this._excursionTableAdapter != null)) {
                     revertConnections.Add(this._excursionTableAdapter, this._excursionTableAdapter.Connection);
                     this._excursionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -5417,6 +8431,15 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                     if (this._excursionTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._excursionTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._excursionTableAdapter.Adapter);
+                    }
+                }
+                if ((this._excursionTurTableAdapter != null)) {
+                    revertConnections.Add(this._excursionTurTableAdapter, this._excursionTurTableAdapter.Connection);
+                    this._excursionTurTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._excursionTurTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._excursionTurTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._excursionTurTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._excursionTurTableAdapter.Adapter);
                     }
                 }
                 if ((this._hotelTableAdapter != null)) {
@@ -5503,9 +8526,25 @@ SELECT TurID, Country, DateO, DateI, Day_Night, Cost, Name, City FROM Tur WHERE 
                     this._contractTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._contractTableAdapter]));
                     this._contractTableAdapter.Transaction = null;
                 }
+                if ((this._contractClientTableAdapter != null)) {
+                    this._contractClientTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._contractClientTableAdapter]));
+                    this._contractClientTableAdapter.Transaction = null;
+                }
+                if ((this._contractHotelTableAdapter != null)) {
+                    this._contractHotelTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._contractHotelTableAdapter]));
+                    this._contractHotelTableAdapter.Transaction = null;
+                }
+                if ((this._contractTurTableAdapter != null)) {
+                    this._contractTurTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._contractTurTableAdapter]));
+                    this._contractTurTableAdapter.Transaction = null;
+                }
                 if ((this._excursionTableAdapter != null)) {
                     this._excursionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._excursionTableAdapter]));
                     this._excursionTableAdapter.Transaction = null;
+                }
+                if ((this._excursionTurTableAdapter != null)) {
+                    this._excursionTurTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._excursionTurTableAdapter]));
+                    this._excursionTurTableAdapter.Transaction = null;
                 }
                 if ((this._hotelTableAdapter != null)) {
                     this._hotelTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._hotelTableAdapter]));

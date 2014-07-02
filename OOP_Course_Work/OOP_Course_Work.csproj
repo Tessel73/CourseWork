@@ -41,12 +41,16 @@
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\..\..\..\Downloads\HtmlAgilityPack.1.4.6 (1)\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\OOP_Lab4\OOP_Lab4\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +71,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContractAddDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CUDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CUDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CWModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -152,6 +161,12 @@
     <Compile Include="FormTurUpdate.Designer.cs">
       <DependentUpon>FormTurUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormContractPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormContractPDF.Designer.cs">
+      <DependentUpon>FormContractPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hotel.cs">
       <DependentUpon>CWModel.tt</DependentUpon>
     </Compile>
@@ -170,6 +185,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TurAddDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TurUpdateDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurUpdateDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormClientAdd.resx">
       <DependentUpon>FormClientAdd.cs</DependentUpon>
@@ -201,6 +221,9 @@
     <EmbeddedResource Include="FormTurUpdate.resx">
       <DependentUpon>FormTurUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormContractPDF.resx">
+      <DependentUpon>FormContractPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +250,17 @@
     </None>
     <None Include="ContractAddDataSet.xss">
       <DependentUpon>ContractAddDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CUDataSet.xsc">
+      <DependentUpon>CUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CUDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CUDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CUDataSet.xss">
+      <DependentUpon>CUDataSet.xsd</DependentUpon>
     </None>
     <None Include="CWModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -272,6 +306,17 @@
     </None>
     <None Include="TurAddDataSet.xss">
       <DependentUpon>TurAddDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TurUpdateDataSet.xsc">
+      <DependentUpon>TurUpdateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TurUpdateDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TurUpdateDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TurUpdateDataSet.xss">
+      <DependentUpon>TurUpdateDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

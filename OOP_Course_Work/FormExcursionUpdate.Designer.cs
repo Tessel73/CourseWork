@@ -76,7 +76,7 @@
             this.tbFormExcursionUpdateRating.Size = new System.Drawing.Size(374, 43);
             this.tbFormExcursionUpdateRating.TabIndex = 2;
             this.tbFormExcursionUpdateRating.Enter += new System.EventHandler(this.tbFormExcursionUpdateRating_Enter);
-            this.tbFormExcursionUpdateRating.Leave += new System.EventHandler(this.tbFormExcursionUpdaterating_Leave);
+            this.tbFormExcursionUpdateRating.Leave += new System.EventHandler(this.tbFormExcursionUpdateRating_Leave);
             // 
             // tbFormExcursionUpdateLength
             // 

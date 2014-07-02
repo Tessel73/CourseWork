@@ -26,11 +26,18 @@ namespace OOP_Course_Work
         }
         private void FormContractUpdate_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBDataSet.Hotel". При необходимости она может быть перемещена или удалена.
+            this.hotelTableAdapter.Fill(this.dBDataSet.Hotel);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBDataSet.Tur". При необходимости она может быть перемещена или удалена.
+            this.turTableAdapter.Fill(this.dBDataSet.Tur);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dBDataSet.Client". При необходимости она может быть перемещена или удалена.
+            this.clientTableAdapter.Fill(this.dBDataSet.Client);
             LoadtbFormContractUpdateCost();
             LoadcbFormContractUpdateHotelID();
             LoadtbFormContractUpdateNumber();
             LoadcbFormContractUpdateClientID();
             LoadcbFormContractUpdateTurID();
+            LoadtbFormContractUpdateDate();
         }
         private void LoadcbFormContractUpdateClientID()
         {
@@ -82,6 +89,16 @@ namespace OOP_Course_Work
             tbFormContractUpdateCost.Text = string.Empty;
             tbFormContractUpdateCost.ForeColor = Color.Black;
         }
+        private void LoadtbFormContractUpdateDate()
+        {
+            tbFormContractUpdateDate.Text = "Введите дату заключения договора (ДД.ММ.ГГ)";
+            tbFormContractUpdateDate.ForeColor = Color.Gray;
+        }
+        private void EntertbFormContractUpdateDate()
+        {
+            tbFormContractUpdateDate.Text = string.Empty;
+            tbFormContractUpdateDate.ForeColor = Color.Black;
+        }
         private void cbFormContractClientID_Enter(object sender, EventArgs e)
         {
             EntercbFormContractUpdateClientID();
@@ -101,6 +118,10 @@ namespace OOP_Course_Work
         private void tbFormContractUpdateCost_Enter(object sender, EventArgs e)
         {
             EntertbFormContractUpdateCost();
+        }
+        private void tbFormContractUpdateDate_Enter(object sender, EventArgs e)
+        {
+            EntertbFormContractUpdateDate();
         }
         private void cbFormContractUpdateClientID_Leave(object sender, EventArgs e)
         {
@@ -127,12 +148,17 @@ namespace OOP_Course_Work
             if (tbFormContractUpdateCost.Text == string.Empty)
                 LoadtbFormContractUpdateCost();
         }
+        private void tbFormContractUpdateDate_Leave(object sender, EventArgs e)
+        {
+            if (tbFormContractUpdateDate.Text == string.Empty)
+                LoadtbFormContractUpdateDate();
+        }  
         private void btnFormContractUpdateUpdate_Click(object sender, EventArgs e)
         {
             dataBaseFunction.ContractUpdate(cbFormContractUpdateClientID.Text, cbFormContractUpdateTurID.Text,
-                cbFormContractUpdateHotelID.Text, tbFormContractUpdateNumber.Text, tbFormContractUpdateCost.Text, choicecell);
+                cbFormContractUpdateHotelID.Text, tbFormContractUpdateNumber.Text, tbFormContractUpdateCost.Text, tbFormContractUpdateDate.Text, choicecell);
             mainMenu2.TableAdapterContract.Fill(mainMenu2.DBDataSet.Contract);
-        }        
+        }       
     }
 }
 

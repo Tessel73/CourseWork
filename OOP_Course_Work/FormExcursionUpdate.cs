@@ -122,7 +122,7 @@ namespace OOP_Course_Work
             if (tbFormExcursionUpdateName.Text == string.Empty)
                 LoadtbFormExcursionUpdateName();
         }
-        private void tbFormExcursionUpdaterating_Leave(object sender, EventArgs e)
+        private void tbFormExcursionUpdateRating_Leave(object sender, EventArgs e)
         {
             if (tbFormExcursionUpdateRating.Text == string.Empty)
                 LoadtbFormExcursionUpdateRating();

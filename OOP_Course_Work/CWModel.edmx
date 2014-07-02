@@ -11,18 +11,33 @@
     <EntitySet Name="Hotel" EntityType="CWModel.Store.Hotel" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tur" EntityType="CWModel.Store.Tur" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Excursion" EntityType="CWModel.Store.Excursion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractClient" EntityType="CWModel.Store.ContractClient" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractTur" EntityType="CWModel.Store.ContractTur" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContractHotel" EntityType="CWModel.Store.ContractHotel" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ExcursionTur" EntityType="CWModel.Store.ExcursionTur" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="ContractClient" Association="CWModel.Store.ContractClient">
+    <AssociationSet Name="FK_ContractClient_Contract" Association="CWModel.Store.FK_ContractClient_Contract">
       <End Role="Contract" EntitySet="Contract" />
+      <End Role="ContractClient" EntitySet="ContractClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractClient_Client" Association="CWModel.Store.FK_ContractClient_Client">
       <End Role="Client" EntitySet="Client" />
+      <End Role="ContractClient" EntitySet="ContractClient" />
     </AssociationSet>
-    <AssociationSet Name="ContractTur" Association="CWModel.Store.ContractTur">
+    <AssociationSet Name="FK_ContractTur_Contract" Association="CWModel.Store.FK_ContractTur_Contract">
       <End Role="Contract" EntitySet="Contract" />
+      <End Role="ContractTur" EntitySet="ContractTur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractTur_Tur" Association="CWModel.Store.FK_ContractTur_Tur">
       <End Role="Tur" EntitySet="Tur" />
+      <End Role="ContractTur" EntitySet="ContractTur" />
     </AssociationSet>
-    <AssociationSet Name="ContractHotel" Association="CWModel.Store.ContractHotel">
+    <AssociationSet Name="FK_ContractHotel_Contract" Association="CWModel.Store.FK_ContractHotel_Contract">
       <End Role="Contract" EntitySet="Contract" />
+      <End Role="ContractHotel" EntitySet="ContractHotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractHotel_Hotel" Association="CWModel.Store.FK_ContractHotel_Hotel">
       <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="ContractHotel" EntitySet="ContractHotel" />
     </AssociationSet>
     <AssociationSet Name="FK_ExcursionTur_Excursion" Association="CWModel.Store.FK_ExcursionTur_Excursion">
       <End Role="Excursion" EntitySet="Excursion" />
@@ -53,9 +68,7 @@
     <Property Name="Number" Type="int" Nullable="false" />
     <Property Name="Cost" Type="float" Nullable="false" />
     <Property Name="TotalCost" Type="float" Nullable="true" />
-    <Property Name="Client_ClientID" Type="int" Nullable="false" />
-    <Property Name="Tur_TurID" Type="int" Nullable="false" />
-    <Property Name="Hotel_HotelID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Hotel">
     <Key>
@@ -92,6 +105,30 @@
     <Property Name="Cost" Type="float" Nullable="false" />
     <Property Name="Note" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
+  <EntityType Name="ContractClient">
+    <Key>
+      <PropertyRef Name="ContractClient_Client_ContractID" />
+      <PropertyRef Name="Client_ClientID" />
+    </Key>
+    <Property Name="ContractClient_Client_ContractID" Type="int" Nullable="false" />
+    <Property Name="Client_ClientID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractTur">
+    <Key>
+      <PropertyRef Name="ContractTur_Tur_ContractID" />
+      <PropertyRef Name="Tur_TurID" />
+    </Key>
+    <Property Name="ContractTur_Tur_ContractID" Type="int" Nullable="false" />
+    <Property Name="Tur_TurID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractHotel">
+    <Key>
+      <PropertyRef Name="ContractHotel_Hotel_ContractID" />
+      <PropertyRef Name="Hotel_HotelID" />
+    </Key>
+    <Property Name="ContractHotel_Hotel_ContractID" Type="int" Nullable="false" />
+    <Property Name="Hotel_HotelID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="ExcursionTur">
     <Key>
       <PropertyRef Name="Excursion_ExcursionID" />
@@ -100,38 +137,74 @@
     <Property Name="Excursion_ExcursionID" Type="int" Nullable="false" />
     <Property Name="Tur_TurID" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="ContractClient">
-    <End Role="Contract" Type="CWModel.Store.Contract" Multiplicity="*" />
+  <Association Name="FK_ContractClient_Contract">
+    <End Role="Contract" Type="CWModel.Store.Contract" Multiplicity="1" />
+    <End Role="ContractClient" Type="CWModel.Store.ContractClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="ContractClient">
+        <PropertyRef Name="ContractClient_Client_ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractClient_Client">
+    <End Role="ContractClient" Type="CWModel.Store.ContractClient" Multiplicity="*" />
     <End Role="Client" Type="CWModel.Store.Client" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Client">
         <PropertyRef Name="ClientID" />
       </Principal>
-      <Dependent Role="Contract">
+      <Dependent Role="ContractClient">
         <PropertyRef Name="Client_ClientID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ContractTur">
-    <End Role="Contract" Type="CWModel.Store.Contract" Multiplicity="*" />
+  <Association Name="FK_ContractTur_Contract">
+    <End Role="Contract" Type="CWModel.Store.Contract" Multiplicity="1" />
+    <End Role="ContractTur" Type="CWModel.Store.ContractTur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="ContractTur">
+        <PropertyRef Name="ContractTur_Tur_ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractTur_Tur">
+    <End Role="ContractTur" Type="CWModel.Store.ContractTur" Multiplicity="*" />
     <End Role="Tur" Type="CWModel.Store.Tur" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Tur">
         <PropertyRef Name="TurID" />
       </Principal>
-      <Dependent Role="Contract">
+      <Dependent Role="ContractTur">
         <PropertyRef Name="Tur_TurID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ContractHotel">
-    <End Role="Contract" Type="CWModel.Store.Contract" Multiplicity="*" />
+  <Association Name="FK_ContractHotel_Contract">
+    <End Role="Contract" Type="CWModel.Store.Contract" Multiplicity="1" />
+    <End Role="ContractHotel" Type="CWModel.Store.ContractHotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="ContractHotel">
+        <PropertyRef Name="ContractHotel_Hotel_ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractHotel_Hotel">
+    <End Role="ContractHotel" Type="CWModel.Store.ContractHotel" Multiplicity="*" />
     <End Role="Hotel" Type="CWModel.Store.Hotel" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Hotel">
         <PropertyRef Name="HotelID" />
       </Principal>
-      <Dependent Role="Contract">
+      <Dependent Role="ContractHotel">
         <PropertyRef Name="Hotel_HotelID" />
       </Dependent>
     </ReferentialConstraint>
@@ -210,6 +283,7 @@
           <NavigationProperty Name="Tur" Relationship="CWModel.ContractTur" FromRole="Contract" ToRole="Tur" />
           <NavigationProperty Name="Hotel" Relationship="CWModel.ContractHotel" FromRole="Contract" ToRole="Hotel" />
           <Property Name="TotalCost" Type="Double" Nullable="true" cg:SetterAccess="Public" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="Hotel">
           <Key>
@@ -237,15 +311,15 @@
         </EntityType>
         <Association Name="ContractClient">
           <End Type="CWModel.Contract" Role="Contract" Multiplicity="*" />
-          <End Type="CWModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="CWModel.Client" Role="Client" Multiplicity="*" />
         </Association>
         <Association Name="ContractTur">
           <End Type="CWModel.Contract" Role="Contract" Multiplicity="*" />
-          <End Type="CWModel.Tur" Role="Tur" Multiplicity="1" />
+          <End Type="CWModel.Tur" Role="Tur" Multiplicity="*" />
         </Association>
         <Association Name="ContractHotel">
           <End Type="CWModel.Contract" Role="Contract" Multiplicity="*" />
-          <End Type="CWModel.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="CWModel.Hotel" Role="Hotel" Multiplicity="*" />
         </Association>
         <EntityType Name="Excursion">
           <Key>
@@ -290,6 +364,7 @@
           <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -331,28 +406,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ContractClient" TypeName="CWModel.ContractClient" StoreEntitySet="Contract">
+    <AssociationSetMapping Name="ContractClient" TypeName="CWModel.ContractClient" StoreEntitySet="ContractClient">
+      <EndProperty Name="Contract">
+        <ScalarProperty Name="ContractID" ColumnName="ContractClient_Client_ContractID" />
+      </EndProperty>
       <EndProperty Name="Client">
         <ScalarProperty Name="ClientID" ColumnName="Client_ClientID" />
       </EndProperty>
-      <EndProperty Name="Contract">
-        <ScalarProperty Name="ContractID" ColumnName="ContractID" />
-      </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ContractTur" TypeName="CWModel.ContractTur" StoreEntitySet="Contract">
+    <AssociationSetMapping Name="ContractTur" TypeName="CWModel.ContractTur" StoreEntitySet="ContractTur">
+      <EndProperty Name="Contract">
+        <ScalarProperty Name="ContractID" ColumnName="ContractTur_Tur_ContractID" />
+      </EndProperty>
       <EndProperty Name="Tur">
         <ScalarProperty Name="TurID" ColumnName="Tur_TurID" />
       </EndProperty>
-      <EndProperty Name="Contract">
-        <ScalarProperty Name="ContractID" ColumnName="ContractID" />
-      </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ContractHotel" TypeName="CWModel.ContractHotel" StoreEntitySet="Contract">
+    <AssociationSetMapping Name="ContractHotel" TypeName="CWModel.ContractHotel" StoreEntitySet="ContractHotel">
+      <EndProperty Name="Contract">
+        <ScalarProperty Name="ContractID" ColumnName="ContractHotel_Hotel_ContractID" />
+      </EndProperty>
       <EndProperty Name="Hotel">
         <ScalarProperty Name="HotelID" ColumnName="Hotel_HotelID" />
-      </EndProperty>
-      <EndProperty Name="Contract">
-        <ScalarProperty Name="ContractID" ColumnName="ContractID" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="ExcursionTur" TypeName="CWModel.ExcursionTur" StoreEntitySet="ExcursionTur">

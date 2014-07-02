@@ -50,7 +50,7 @@ namespace OOP_Course_Work
         }
         private void LoadtbFormHotelAddFood()
         {
-            tbFormHotelAddFood.Text = "Введите рейтинг питания";
+            tbFormHotelAddFood.Text = "Введите формат питания";
             tbFormHotelAddFood.ForeColor = Color.Gray;
         }
         private void EntertbFormHotelAddFood()

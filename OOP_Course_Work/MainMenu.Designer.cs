@@ -42,57 +42,43 @@
             this.Клиенты = new System.Windows.Forms.TabPage();
             this.btnFormClientUpdate = new System.Windows.Forms.Button();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnFormClientDelete = new System.Windows.Forms.Button();
             this.btnFormClientAdd = new System.Windows.Forms.Button();
             this.Договора = new System.Windows.Forms.TabPage();
+            this.btnFormContractPDF = new System.Windows.Forms.Button();
             this.btnFormContractDelete = new System.Windows.Forms.Button();
             this.btnFormContractUpdate = new System.Windows.Forms.Button();
             this.btnFormContractAdd = new System.Windows.Forms.Button();
             this.dataGridViewContract = new System.Windows.Forms.DataGridView();
-            this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contractIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Отели = new System.Windows.Forms.TabPage();
             this.btnFormHotelDelete = new System.Windows.Forms.Button();
             this.btnFormHotelUpdate = new System.Windows.Forms.Button();
             this.btnFormHotelAdd = new System.Windows.Forms.Button();
             this.dataGridViewHotel = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.foodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotelIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Экскурсии = new System.Windows.Forms.TabPage();
             this.btnFormExcursionDelete = new System.Windows.Forms.Button();
             this.btnFormExcursionUpdate = new System.Windows.Forms.Button();
             this.btnFormExcursionAdd = new System.Windows.Forms.Button();
             this.dataGridViewExcursion = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.excursionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.excursionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnInfo = new System.Windows.Forms.Button();
             this.TableAdapterTur = new OOP_Course_Work.DBDataSetTableAdapters.TurTableAdapter();
             this.TableAdapterClient = new OOP_Course_Work.DBDataSetTableAdapters.ClientTableAdapter();
             this.TableAdapterContract = new OOP_Course_Work.DBDataSetTableAdapters.ContractTableAdapter();
             this.TableAdapterHotel = new OOP_Course_Work.DBDataSetTableAdapters.HotelTableAdapter();
             this.TableAdapterExcursion = new OOP_Course_Work.DBDataSetTableAdapters.ExcursionTableAdapter();
-            this.btnInfo = new System.Windows.Forms.Button();
-            this.turIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +86,22 @@
             this.dayNightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contractIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratingDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.excursionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlMain.SuspendLayout();
             this.Туры.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTur)).BeginInit();
@@ -193,16 +195,16 @@
             this.dataGridViewTur.AutoGenerateColumns = false;
             this.dataGridViewTur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.turIDDataGridViewTextBoxColumn,
             this.countryDataGridViewTextBoxColumn,
             this.cityDataGridViewTextBoxColumn,
             this.dateODataGridViewTextBoxColumn,
             this.dateIDataGridViewTextBoxColumn,
             this.dayNightDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn});
+            this.nameDataGridViewTextBoxColumn,
+            this.turIDDataGridViewTextBoxColumn});
             this.dataGridViewTur.DataSource = this.turBindingSource;
-            this.dataGridViewTur.Location = new System.Drawing.Point(9, 5);
+            this.dataGridViewTur.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewTur.Name = "dataGridViewTur";
             this.dataGridViewTur.RowTemplate.Height = 24;
             this.dataGridViewTur.Size = new System.Drawing.Size(1079, 300);
@@ -263,35 +265,6 @@
             this.dataGridViewClient.Size = new System.Drawing.Size(1079, 299);
             this.dataGridViewClient.TabIndex = 7;
             // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "ФИО";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // passportDataGridViewTextBoxColumn
-            // 
-            this.passportDataGridViewTextBoxColumn.DataPropertyName = "Passport";
-            this.passportDataGridViewTextBoxColumn.HeaderText = "Пасспортные данные";
-            this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
-            this.passportDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientIDDataGridViewTextBoxColumn.Visible = false;
-            // 
             // clientBindingSource
             // 
             this.clientBindingSource.DataMember = "Client";
@@ -319,6 +292,7 @@
             // 
             // Договора
             // 
+            this.Договора.Controls.Add(this.btnFormContractPDF);
             this.Договора.Controls.Add(this.btnFormContractDelete);
             this.Договора.Controls.Add(this.btnFormContractUpdate);
             this.Договора.Controls.Add(this.btnFormContractAdd);
@@ -329,6 +303,16 @@
             this.Договора.TabIndex = 2;
             this.Договора.Text = "Договора";
             this.Договора.UseVisualStyleBackColor = true;
+            // 
+            // btnFormContractPDF
+            // 
+            this.btnFormContractPDF.Location = new System.Drawing.Point(265, 341);
+            this.btnFormContractPDF.Name = "btnFormContractPDF";
+            this.btnFormContractPDF.Size = new System.Drawing.Size(115, 55);
+            this.btnFormContractPDF.TabIndex = 9;
+            this.btnFormContractPDF.Text = "Отчет";
+            this.btnFormContractPDF.UseVisualStyleBackColor = true;
+            this.btnFormContractPDF.Click += new System.EventHandler(this.btnFormContractPDF_Click);
             // 
             // btnFormContractDelete
             // 
@@ -372,6 +356,7 @@
             this.numberDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn1,
             this.totalCostDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
             this.contractIDDataGridViewTextBoxColumn});
             this.dataGridViewContract.DataSource = this.contractBindingSource;
             this.dataGridViewContract.Location = new System.Drawing.Point(9, 3);
@@ -379,56 +364,6 @@
             this.dataGridViewContract.RowTemplate.Height = 24;
             this.dataGridViewContract.Size = new System.Drawing.Size(1079, 302);
             this.dataGridViewContract.TabIndex = 0;
-            // 
-            // clientIDDataGridViewTextBoxColumn1
-            // 
-            this.clientIDDataGridViewTextBoxColumn1.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn1.HeaderText = "Клиент";
-            this.clientIDDataGridViewTextBoxColumn1.Name = "clientIDDataGridViewTextBoxColumn1";
-            this.clientIDDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // turIDDataGridViewTextBoxColumn1
-            // 
-            this.turIDDataGridViewTextBoxColumn1.DataPropertyName = "TurID";
-            this.turIDDataGridViewTextBoxColumn1.HeaderText = "Тур";
-            this.turIDDataGridViewTextBoxColumn1.Name = "turIDDataGridViewTextBoxColumn1";
-            this.turIDDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // hotelIDDataGridViewTextBoxColumn
-            // 
-            this.hotelIDDataGridViewTextBoxColumn.DataPropertyName = "HotelID";
-            this.hotelIDDataGridViewTextBoxColumn.HeaderText = "Отель";
-            this.hotelIDDataGridViewTextBoxColumn.Name = "hotelIDDataGridViewTextBoxColumn";
-            this.hotelIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Количество путевок";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // costDataGridViewTextBoxColumn1
-            // 
-            this.costDataGridViewTextBoxColumn1.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn1.HeaderText = "Стоимость";
-            this.costDataGridViewTextBoxColumn1.Name = "costDataGridViewTextBoxColumn1";
-            this.costDataGridViewTextBoxColumn1.Width = 140;
-            // 
-            // totalCostDataGridViewTextBoxColumn
-            // 
-            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "TotalCost";
-            this.totalCostDataGridViewTextBoxColumn.HeaderText = "Итоговая стоимость";
-            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
-            this.totalCostDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // contractIDDataGridViewTextBoxColumn
-            // 
-            this.contractIDDataGridViewTextBoxColumn.DataPropertyName = "ContractID";
-            this.contractIDDataGridViewTextBoxColumn.HeaderText = "ContractID";
-            this.contractIDDataGridViewTextBoxColumn.Name = "contractIDDataGridViewTextBoxColumn";
-            this.contractIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contractIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // contractBindingSource
             // 
@@ -488,8 +423,8 @@
             this.dataGridViewHotel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn2,
             this.ratingDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn2,
             this.foodDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn2,
             this.hotelIDDataGridViewTextBoxColumn1});
             this.dataGridViewHotel.DataSource = this.hotelBindingSource;
             this.dataGridViewHotel.Location = new System.Drawing.Point(9, 3);
@@ -497,42 +432,6 @@
             this.dataGridViewHotel.RowTemplate.Height = 24;
             this.dataGridViewHotel.Size = new System.Drawing.Size(1079, 307);
             this.dataGridViewHotel.TabIndex = 0;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // ratingDataGridViewTextBoxColumn
-            // 
-            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
-            this.ratingDataGridViewTextBoxColumn.HeaderText = "Рейтинг";
-            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
-            this.ratingDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // costDataGridViewTextBoxColumn2
-            // 
-            this.costDataGridViewTextBoxColumn2.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn2.HeaderText = "Стоимость";
-            this.costDataGridViewTextBoxColumn2.Name = "costDataGridViewTextBoxColumn2";
-            this.costDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // foodDataGridViewTextBoxColumn
-            // 
-            this.foodDataGridViewTextBoxColumn.DataPropertyName = "Food";
-            this.foodDataGridViewTextBoxColumn.HeaderText = "Питание";
-            this.foodDataGridViewTextBoxColumn.Name = "foodDataGridViewTextBoxColumn";
-            this.foodDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // hotelIDDataGridViewTextBoxColumn1
-            // 
-            this.hotelIDDataGridViewTextBoxColumn1.DataPropertyName = "HotelID";
-            this.hotelIDDataGridViewTextBoxColumn1.HeaderText = "HotelID";
-            this.hotelIDDataGridViewTextBoxColumn1.Name = "hotelIDDataGridViewTextBoxColumn1";
-            this.hotelIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.hotelIDDataGridViewTextBoxColumn1.Visible = false;
             // 
             // hotelBindingSource
             // 
@@ -603,60 +502,20 @@
             this.dataGridViewExcursion.Size = new System.Drawing.Size(1079, 305);
             this.dataGridViewExcursion.TabIndex = 0;
             // 
-            // nameDataGridViewTextBoxColumn3
-            // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            this.nameDataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // ratingDataGridViewTextBoxColumn1
-            // 
-            this.ratingDataGridViewTextBoxColumn1.DataPropertyName = "Rating";
-            this.ratingDataGridViewTextBoxColumn1.HeaderText = "Рейтинг";
-            this.ratingDataGridViewTextBoxColumn1.Name = "ratingDataGridViewTextBoxColumn1";
-            this.ratingDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Время";
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
-            this.timeDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // lengthDataGridViewTextBoxColumn
-            // 
-            this.lengthDataGridViewTextBoxColumn.DataPropertyName = "Length";
-            this.lengthDataGridViewTextBoxColumn.HeaderText = "Продолжительность";
-            this.lengthDataGridViewTextBoxColumn.Name = "lengthDataGridViewTextBoxColumn";
-            this.lengthDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // costDataGridViewTextBoxColumn3
-            // 
-            this.costDataGridViewTextBoxColumn3.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn3.HeaderText = "Стоимость, руб";
-            this.costDataGridViewTextBoxColumn3.Name = "costDataGridViewTextBoxColumn3";
-            this.costDataGridViewTextBoxColumn3.Width = 140;
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "Заметка";
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-            this.noteDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // excursionIDDataGridViewTextBoxColumn
-            // 
-            this.excursionIDDataGridViewTextBoxColumn.DataPropertyName = "ExcursionID";
-            this.excursionIDDataGridViewTextBoxColumn.HeaderText = "ExcursionID";
-            this.excursionIDDataGridViewTextBoxColumn.Name = "excursionIDDataGridViewTextBoxColumn";
-            this.excursionIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.excursionIDDataGridViewTextBoxColumn.Visible = false;
-            // 
             // excursionBindingSource
             // 
             this.excursionBindingSource.DataMember = "Excursion";
             this.excursionBindingSource.DataSource = this.bindingSourceDB;
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Location = new System.Drawing.Point(849, 436);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(115, 55);
+            this.btnInfo.TabIndex = 9;
+            this.btnInfo.Text = "Справка";
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // TableAdapterTur
             // 
@@ -678,15 +537,119 @@
             // 
             this.TableAdapterExcursion.ClearBeforeFill = true;
             // 
-            // btnInfo
+            // nameDataGridViewTextBoxColumn2
             // 
-            this.btnInfo.Location = new System.Drawing.Point(849, 436);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(115, 55);
-            this.btnInfo.TabIndex = 9;
-            this.btnInfo.Text = "Справка";
-            this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // ratingDataGridViewTextBoxColumn
+            // 
+            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
+            this.ratingDataGridViewTextBoxColumn.HeaderText = "Рейтинг";
+            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            this.ratingDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // foodDataGridViewTextBoxColumn
+            // 
+            this.foodDataGridViewTextBoxColumn.DataPropertyName = "Food";
+            this.foodDataGridViewTextBoxColumn.HeaderText = "Рейтинг питания";
+            this.foodDataGridViewTextBoxColumn.Name = "foodDataGridViewTextBoxColumn";
+            this.foodDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // costDataGridViewTextBoxColumn2
+            // 
+            this.costDataGridViewTextBoxColumn2.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn2.HeaderText = "Стоимость, руб";
+            this.costDataGridViewTextBoxColumn2.Name = "costDataGridViewTextBoxColumn2";
+            this.costDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // hotelIDDataGridViewTextBoxColumn1
+            // 
+            this.hotelIDDataGridViewTextBoxColumn1.DataPropertyName = "HotelID";
+            this.hotelIDDataGridViewTextBoxColumn1.HeaderText = "HotelID";
+            this.hotelIDDataGridViewTextBoxColumn1.Name = "hotelIDDataGridViewTextBoxColumn1";
+            this.hotelIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.hotelIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // passportDataGridViewTextBoxColumn
+            // 
+            this.passportDataGridViewTextBoxColumn.DataPropertyName = "Passport";
+            this.passportDataGridViewTextBoxColumn.HeaderText = "Пасспорт";
+            this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
+            this.passportDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Страна";
+            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // dateODataGridViewTextBoxColumn
+            // 
+            this.dateODataGridViewTextBoxColumn.DataPropertyName = "DateO";
+            this.dateODataGridViewTextBoxColumn.HeaderText = "Дата отправления";
+            this.dateODataGridViewTextBoxColumn.Name = "dateODataGridViewTextBoxColumn";
+            this.dateODataGridViewTextBoxColumn.Width = 160;
+            // 
+            // dateIDataGridViewTextBoxColumn
+            // 
+            this.dateIDataGridViewTextBoxColumn.DataPropertyName = "DateI";
+            this.dateIDataGridViewTextBoxColumn.HeaderText = "Дата прибытия ";
+            this.dateIDataGridViewTextBoxColumn.Name = "dateIDataGridViewTextBoxColumn";
+            this.dateIDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // dayNightDataGridViewTextBoxColumn
+            // 
+            this.dayNightDataGridViewTextBoxColumn.DataPropertyName = "Day_Night";
+            this.dayNightDataGridViewTextBoxColumn.HeaderText = "Дни/ночи";
+            this.dayNightDataGridViewTextBoxColumn.Name = "dayNightDataGridViewTextBoxColumn";
+            this.dayNightDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость, руб";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Экскурсия";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 220;
             // 
             // turIDDataGridViewTextBoxColumn
             // 
@@ -696,54 +659,110 @@
             this.turIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.turIDDataGridViewTextBoxColumn.Visible = false;
             // 
-            // countryDataGridViewTextBoxColumn
+            // clientIDDataGridViewTextBoxColumn1
             // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Страна";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            this.countryDataGridViewTextBoxColumn.Width = 200;
+            this.clientIDDataGridViewTextBoxColumn1.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn1.HeaderText = "Клиент";
+            this.clientIDDataGridViewTextBoxColumn1.Name = "clientIDDataGridViewTextBoxColumn1";
+            this.clientIDDataGridViewTextBoxColumn1.Width = 240;
             // 
-            // cityDataGridViewTextBoxColumn
+            // turIDDataGridViewTextBoxColumn1
             // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "Город";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.Width = 200;
+            this.turIDDataGridViewTextBoxColumn1.DataPropertyName = "TurID";
+            this.turIDDataGridViewTextBoxColumn1.HeaderText = "Тур";
+            this.turIDDataGridViewTextBoxColumn1.Name = "turIDDataGridViewTextBoxColumn1";
+            this.turIDDataGridViewTextBoxColumn1.Width = 150;
             // 
-            // dateODataGridViewTextBoxColumn
+            // hotelIDDataGridViewTextBoxColumn
             // 
-            this.dateODataGridViewTextBoxColumn.DataPropertyName = "DateO";
-            this.dateODataGridViewTextBoxColumn.HeaderText = "Дата отправления";
-            this.dateODataGridViewTextBoxColumn.Name = "dateODataGridViewTextBoxColumn";
-            this.dateODataGridViewTextBoxColumn.Width = 120;
+            this.hotelIDDataGridViewTextBoxColumn.DataPropertyName = "HotelID";
+            this.hotelIDDataGridViewTextBoxColumn.HeaderText = "Отель";
+            this.hotelIDDataGridViewTextBoxColumn.Name = "hotelIDDataGridViewTextBoxColumn";
+            this.hotelIDDataGridViewTextBoxColumn.Width = 150;
             // 
-            // dateIDataGridViewTextBoxColumn
+            // numberDataGridViewTextBoxColumn
             // 
-            this.dateIDataGridViewTextBoxColumn.DataPropertyName = "DateI";
-            this.dateIDataGridViewTextBoxColumn.HeaderText = "Дата прибытия";
-            this.dateIDataGridViewTextBoxColumn.Name = "dateIDataGridViewTextBoxColumn";
-            this.dateIDataGridViewTextBoxColumn.Width = 120;
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
             // 
-            // dayNightDataGridViewTextBoxColumn
+            // costDataGridViewTextBoxColumn1
             // 
-            this.dayNightDataGridViewTextBoxColumn.DataPropertyName = "Day_Night";
-            this.dayNightDataGridViewTextBoxColumn.HeaderText = "Дни/Ночи";
-            this.dayNightDataGridViewTextBoxColumn.Name = "dayNightDataGridViewTextBoxColumn";
-            this.dayNightDataGridViewTextBoxColumn.Width = 110;
+            this.costDataGridViewTextBoxColumn1.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn1.HeaderText = "Стоимость, руб";
+            this.costDataGridViewTextBoxColumn1.Name = "costDataGridViewTextBoxColumn1";
+            this.costDataGridViewTextBoxColumn1.Width = 150;
             // 
-            // costDataGridViewTextBoxColumn
+            // totalCostDataGridViewTextBoxColumn
             // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Стоимость, руб";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 130;
+            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "TotalCost";
+            this.totalCostDataGridViewTextBoxColumn.HeaderText = "Итого, руб";
+            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
+            this.totalCostDataGridViewTextBoxColumn.Width = 120;
             // 
-            // nameDataGridViewTextBoxColumn
+            // dateDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Экскурсия";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 140;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // contractIDDataGridViewTextBoxColumn
+            // 
+            this.contractIDDataGridViewTextBoxColumn.DataPropertyName = "ContractID";
+            this.contractIDDataGridViewTextBoxColumn.HeaderText = "ContractID";
+            this.contractIDDataGridViewTextBoxColumn.Name = "contractIDDataGridViewTextBoxColumn";
+            this.contractIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contractIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            this.nameDataGridViewTextBoxColumn3.Width = 260;
+            // 
+            // ratingDataGridViewTextBoxColumn1
+            // 
+            this.ratingDataGridViewTextBoxColumn1.DataPropertyName = "Rating";
+            this.ratingDataGridViewTextBoxColumn1.HeaderText = "Рейтинг";
+            this.ratingDataGridViewTextBoxColumn1.Name = "ratingDataGridViewTextBoxColumn1";
+            this.ratingDataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // timeDataGridViewTextBoxColumn
+            // 
+            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "Время";
+            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
+            this.timeDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // lengthDataGridViewTextBoxColumn
+            // 
+            this.lengthDataGridViewTextBoxColumn.DataPropertyName = "Length";
+            this.lengthDataGridViewTextBoxColumn.HeaderText = "Продолжительность";
+            this.lengthDataGridViewTextBoxColumn.Name = "lengthDataGridViewTextBoxColumn";
+            this.lengthDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // costDataGridViewTextBoxColumn3
+            // 
+            this.costDataGridViewTextBoxColumn3.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn3.HeaderText = "Стоимость, руб";
+            this.costDataGridViewTextBoxColumn3.Name = "costDataGridViewTextBoxColumn3";
+            this.costDataGridViewTextBoxColumn3.Width = 160;
+            // 
+            // noteDataGridViewTextBoxColumn
+            // 
+            this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "Заметка";
+            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.noteDataGridViewTextBoxColumn.Width = 220;
+            // 
+            // excursionIDDataGridViewTextBoxColumn
+            // 
+            this.excursionIDDataGridViewTextBoxColumn.DataPropertyName = "ExcursionID";
+            this.excursionIDDataGridViewTextBoxColumn.HeaderText = "ExcursionID";
+            this.excursionIDDataGridViewTextBoxColumn.Name = "excursionIDDataGridViewTextBoxColumn";
+            this.excursionIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.excursionIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // MainMenu
             // 
@@ -811,43 +830,29 @@
         public System.Windows.Forms.DataGridView dataGridViewHotel;
         public System.Windows.Forms.DataGridView dataGridViewContract;
         public System.Windows.Forms.TabControl tabControlMain;
+        private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.BindingSource bindingSourceDB;
-        private System.Windows.Forms.BindingSource turBindingSource;
         public DBDataSet DBDataSet;
+        private System.Windows.Forms.BindingSource turBindingSource;
         public DBDataSetTableAdapters.TurTableAdapter TableAdapterTur;
         private System.Windows.Forms.BindingSource clientBindingSource;
         public DBDataSetTableAdapters.ClientTableAdapter TableAdapterClient;
         private System.Windows.Forms.BindingSource contractBindingSource;
         public DBDataSetTableAdapters.ContractTableAdapter TableAdapterContract;
         private System.Windows.Forms.BindingSource hotelBindingSource;
-        public DBDataSetTableAdapters.HotelTableAdapter TableAdapterHotel;
         private System.Windows.Forms.BindingSource excursionBindingSource;
         public DBDataSetTableAdapters.ExcursionTableAdapter TableAdapterExcursion;
+        public DBDataSetTableAdapters.HotelTableAdapter TableAdapterHotel;
+        private System.Windows.Forms.Button btnFormContractPDF;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn passportDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hotelIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contractIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn foodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotelIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn excursionIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateODataGridViewTextBoxColumn;
@@ -855,6 +860,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dayNightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotelIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contractIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn excursionIDDataGridViewTextBoxColumn;
     }
 }
 

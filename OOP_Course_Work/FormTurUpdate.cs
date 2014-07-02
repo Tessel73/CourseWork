@@ -22,6 +22,8 @@ namespace OOP_Course_Work
         }
         private void FormTurUpdate_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "turUpdateDataSet.Excursion". При необходимости она может быть перемещена или удалена.
+            this.excursionTableAdapter.Fill(this.turUpdateDataSet.Excursion);
             LoadtbFormTurUpdateDateI();
             LoadtbFormTurUpdateDateO();
             LoadtbFormTurUpdateCountry();

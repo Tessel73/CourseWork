@@ -44,6 +44,7 @@
             this.clientTableAdapter = new OOP_Course_Work.ContractAddDataSetTableAdapters.ClientTableAdapter();
             this.hotelTableAdapter = new OOP_Course_Work.ContractAddDataSetTableAdapters.HotelTableAdapter();
             this.turTableAdapter = new OOP_Course_Work.ContractAddDataSetTableAdapters.TurTableAdapter();
+            this.tbFormContractAddDate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractAddDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractAddDataSet)).BeginInit();
@@ -58,6 +59,8 @@
             this.tbFormContractAddNumber.Name = "tbFormContractAddNumber";
             this.tbFormContractAddNumber.Size = new System.Drawing.Size(324, 37);
             this.tbFormContractAddNumber.TabIndex = 4;
+            this.tbFormContractAddNumber.Enter += new System.EventHandler(this.tbFormContractAddNumber_Enter);
+            this.tbFormContractAddNumber.Leave += new System.EventHandler(this.tbFormContractAddNumber_Leave);
             // 
             // tbFormContractAddCost
             // 
@@ -66,6 +69,8 @@
             this.tbFormContractAddCost.Name = "tbFormContractAddCost";
             this.tbFormContractAddCost.Size = new System.Drawing.Size(324, 37);
             this.tbFormContractAddCost.TabIndex = 5;
+            this.tbFormContractAddCost.Enter += new System.EventHandler(this.tbFormContractAddCost_Enter);
+            this.tbFormContractAddCost.Leave += new System.EventHandler(this.tbFormContractAddCost_Leave);
             // 
             // btnFormContractAddAdd
             // 
@@ -73,7 +78,7 @@
             this.btnFormContractAddAdd.Location = new System.Drawing.Point(12, 264);
             this.btnFormContractAddAdd.Name = "btnFormContractAddAdd";
             this.btnFormContractAddAdd.Size = new System.Drawing.Size(115, 55);
-            this.btnFormContractAddAdd.TabIndex = 6;
+            this.btnFormContractAddAdd.TabIndex = 7;
             this.btnFormContractAddAdd.Text = "Добавить";
             this.btnFormContractAddAdd.UseVisualStyleBackColor = true;
             this.btnFormContractAddAdd.Click += new System.EventHandler(this.btnFormContractAddAdd_Click);
@@ -87,7 +92,7 @@
             this.btnFormContractAddExit.TabIndex = 0;
             this.btnFormContractAddExit.Text = "Выход";
             this.btnFormContractAddExit.UseVisualStyleBackColor = true;
-            this.btnFormContractAddExit.Click += new System.EventHandler(this.btnFormContractAddAdd_Click);
+            this.btnFormContractAddExit.Click += new System.EventHandler(this.btnFormContractAddExit_Click);
             // 
             // cbFormContractAddClientID
             // 
@@ -162,11 +167,22 @@
             // 
             this.turTableAdapter.ClearBeforeFill = true;
             // 
+            // tbFormContractAddDate
+            // 
+            this.tbFormContractAddDate.Location = new System.Drawing.Point(13, 189);
+            this.tbFormContractAddDate.Multiline = true;
+            this.tbFormContractAddDate.Name = "tbFormContractAddDate";
+            this.tbFormContractAddDate.Size = new System.Drawing.Size(323, 37);
+            this.tbFormContractAddDate.TabIndex = 6;
+            this.tbFormContractAddDate.Enter += new System.EventHandler(this.tbFormContractAddDate_Enter);
+            this.tbFormContractAddDate.Leave += new System.EventHandler(this.tbFormContractAddDate_Leave);
+            // 
             // FormContractAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 331);
+            this.Controls.Add(this.tbFormContractAddDate);
             this.Controls.Add(this.cbFormContractAddHotelID);
             this.Controls.Add(this.cbFormContractAddTurID);
             this.Controls.Add(this.cbFormContractAddClientID);
@@ -205,5 +221,6 @@
         private ContractAddDataSetTableAdapters.HotelTableAdapter hotelTableAdapter;
         private System.Windows.Forms.BindingSource turBindingSource;
         private ContractAddDataSetTableAdapters.TurTableAdapter turTableAdapter;
+        private System.Windows.Forms.TextBox tbFormContractAddDate;
     }
 }

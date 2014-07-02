@@ -32,10 +32,8 @@ namespace OOP_Course_Work
             this.hotelTableAdapter.Fill(this.contractAddDataSet.Hotel);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "contractAddDataSet.Client". При необходимости она может быть перемещена или удалена.
             this.clientTableAdapter.Fill(this.contractAddDataSet.Client);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "contractAddDataSet.Client". При необходимости она может быть перемещена или удалена.
-            this.clientTableAdapter.Fill(this.contractAddDataSet.Client);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "contractAddDataSetClient.Client". При необходимости она может быть перемещена или удалена.
-            mainMenu2.TableAdapterClient.Fill(mainMenu2.DBDataSet.Client);
+            LoadtbFormContractAddDate();
             LoadtbFormContractAddCost();
             LoadcbFormContractAddHotelID();
             LoadcbFormContractAddClientID();
@@ -91,7 +89,17 @@ namespace OOP_Course_Work
         {
             tbFormContractAddCost.Text = string.Empty;
             tbFormContractAddCost.ForeColor = Color.Black;
-        }     
+        }
+        private void LoadtbFormContractAddDate()
+        {
+            tbFormContractAddDate.Text = "Введите дату заключения договора (ДД.ММ.ГГ)";
+            tbFormContractAddDate.ForeColor = Color.Gray;
+        }
+        private void EntertbFormContractAddDate()
+        {
+            tbFormContractAddDate.Text = string.Empty;
+            tbFormContractAddDate.ForeColor = Color.Black;
+        }
         private void cbFormContractClientID_Enter(object sender, EventArgs e)
         {
             EntercbFormContractAddClientID();
@@ -111,6 +119,10 @@ namespace OOP_Course_Work
         private void tbFormContractAddCost_Enter(object sender, EventArgs e)
         {
             EntertbFormContractAddCost();
+        }
+        private void tbFormContractAddDate_Enter(object sender, EventArgs e)
+        {
+            EntertbFormContractAddDate();
         }
         private void cbFormContractAddClientID_Leave(object sender, EventArgs e)
         {
@@ -136,11 +148,16 @@ namespace OOP_Course_Work
         {
             if (tbFormContractAddCost.Text == string.Empty)
                 LoadtbFormContractAddCost();
-        }       
+        }
+        private void tbFormContractAddDate_Leave(object sender, EventArgs e)
+        {
+            if (tbFormContractAddDate.Text == string.Empty)
+                LoadtbFormContractAddDate();
+        }  
         private void btnFormContractAddAdd_Click(object sender, EventArgs e)
         {
             dataBaseFunction.ContractAdd(cbFormContractAddClientID.Text, cbFormContractAddTurID.Text,
-                cbFormContractAddHotelID.Text, tbFormContractAddNumber.Text, tbFormContractAddCost.Text);
+                cbFormContractAddHotelID.Text, tbFormContractAddNumber.Text, tbFormContractAddCost.Text, tbFormContractAddDate.Text);
             mainMenu2.TableAdapterContract.Fill(mainMenu2.DBDataSet.Contract);
         }       
     }

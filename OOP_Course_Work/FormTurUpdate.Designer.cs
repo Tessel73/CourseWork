@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbFormTurUpdateCountry = new System.Windows.Forms.TextBox();
             this.tbFormTurUpdateDateO = new System.Windows.Forms.TextBox();
             this.tbFormTurUpdateDateI = new System.Windows.Forms.TextBox();
@@ -37,6 +38,11 @@
             this.btnFormTurUpdateExit = new System.Windows.Forms.Button();
             this.tbFormTurUpdateCity = new System.Windows.Forms.TextBox();
             this.cbFormTurUpdateExcursionID = new System.Windows.Forms.ComboBox();
+            this.turUpdateDataSet = new OOP_Course_Work.TurUpdateDataSet();
+            this.excursionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.excursionTableAdapter = new OOP_Course_Work.TurUpdateDataSetTableAdapters.ExcursionTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.turUpdateDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.excursionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbFormTurUpdateCountry
@@ -121,11 +127,29 @@
             // 
             // cbFormTurUpdateExcursionID
             // 
+            this.cbFormTurUpdateExcursionID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.excursionBindingSource, "ExcursionID", true));
+            this.cbFormTurUpdateExcursionID.DataSource = this.excursionBindingSource;
+            this.cbFormTurUpdateExcursionID.DisplayMember = "Name";
             this.cbFormTurUpdateExcursionID.FormattingEnabled = true;
             this.cbFormTurUpdateExcursionID.Location = new System.Drawing.Point(12, 271);
             this.cbFormTurUpdateExcursionID.Name = "cbFormTurUpdateExcursionID";
             this.cbFormTurUpdateExcursionID.Size = new System.Drawing.Size(342, 24);
             this.cbFormTurUpdateExcursionID.TabIndex = 7;
+            this.cbFormTurUpdateExcursionID.ValueMember = "ExcursionID";
+            // 
+            // turUpdateDataSet
+            // 
+            this.turUpdateDataSet.DataSetName = "TurUpdateDataSet";
+            this.turUpdateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // excursionBindingSource
+            // 
+            this.excursionBindingSource.DataMember = "Excursion";
+            this.excursionBindingSource.DataSource = this.turUpdateDataSet;
+            // 
+            // excursionTableAdapter
+            // 
+            this.excursionTableAdapter.ClearBeforeFill = true;
             // 
             // FormTurUpdate
             // 
@@ -146,6 +170,8 @@
             this.Name = "FormTurUpdate";
             this.Text = "Редактирование тура";
             this.Load += new System.EventHandler(this.FormTurUpdate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.turUpdateDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.excursionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +188,8 @@
         private System.Windows.Forms.Button btnFormTurUpdateExit;
         private System.Windows.Forms.TextBox tbFormTurUpdateCity;
         private System.Windows.Forms.ComboBox cbFormTurUpdateExcursionID;
+        private TurUpdateDataSet turUpdateDataSet;
+        private System.Windows.Forms.BindingSource excursionBindingSource;
+        private TurUpdateDataSetTableAdapters.ExcursionTableAdapter excursionTableAdapter;
     }
 }

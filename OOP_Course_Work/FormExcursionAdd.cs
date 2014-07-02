@@ -127,7 +127,7 @@ namespace OOP_Course_Work
         private void tbFormExcursionAddLength_Leave(object sender, EventArgs e)
         {
             if (tbFormExcursionAddLength.Text == string.Empty)
-                LoadtbFormExcursionAddNote();
+                LoadtbFormExcursionAddLength();
         }
         private void tbFormExcursionAddTime_Leave(object sender, EventArgs e)
         {

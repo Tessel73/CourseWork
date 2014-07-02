@@ -4,6 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Drawing;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace OOP_Course_Work
 {
@@ -67,7 +74,7 @@ namespace OOP_Course_Work
                 }
             }
         }
-        public void ContractAdd(string textbox1, string textbox2, string textbox3, string textbox4, string textbox5)
+        public void ContractAdd(string textbox1, string textbox2, string textbox3, string textbox4, string textbox5, string textbox6)
         {
             using (CWModelContainer1 context = new CWModelContainer1())
             {
@@ -79,6 +86,7 @@ namespace OOP_Course_Work
                     Number = Convert.ToInt32(textbox4),
                     Cost = Convert.ToDouble(textbox5),
                     TotalCost = Convert.ToDouble(Convert.ToDouble(textbox4)*Convert.ToDouble(textbox5)),
+                    Date = Convert.ToDateTime(textbox6),
                 };
                 context.Contract.Add(contracts);
                 try
@@ -92,7 +100,7 @@ namespace OOP_Course_Work
                 }
             }
         }
-        public void ContractUpdate(string textbox1, string textbox2, string textbox3, string textbox4, string textbox5, int choicecell)
+        public void ContractUpdate(string textbox1, string textbox2, string textbox3, string textbox4, string textbox5, string textbox6, int choicecell)
         {
             using (CWModelContainer1 context = new CWModelContainer1())
             {
@@ -103,6 +111,7 @@ namespace OOP_Course_Work
                 contract.Number = Convert.ToInt32(textbox4);
                 contract.Cost = Convert.ToDouble(textbox5);
                 contract.TotalCost = Convert.ToDouble(Convert.ToDouble(textbox4) * Convert.ToDouble(textbox5));
+                contract.Date = Convert.ToDateTime(textbox6);
                 try
                 {
                     context.SaveChanges();
@@ -325,5 +334,48 @@ namespace OOP_Course_Work
                   }
               }
         }
-    }
+        public void SelectContract(DateTime dateTime1, DateTime dateTime2)
+        {
+            using (CWModelContainer1 context = new CWModelContainer1())
+            {               
+                List<Contract> contract = context.Contract.Where(date => date.Date >= dateTime1 && date.Date <= dateTime2).ToList();              
+                var doc = new Document();
+                PdfWriter.GetInstance(doc, new FileStream("Contract.pdf", FileMode.Create));
+                doc.Open();
+
+                BaseFont baseFont = BaseFont.CreateFont(@"C:\Windows\Fonts\Arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);              
+                Paragraph a1 = new Paragraph();
+                a1.Alignment = Element.ALIGN_CENTER;
+                a1.Add(new Phrase("Контракты", new iTextSharp.text.Font(baseFont, 16, iTextSharp.text.Font.UNDERLINE, new BaseColor(Color.Black))));             
+                a1.Add(Environment.NewLine);
+                a1.Add(Environment.NewLine);
+                a1.Add(Environment.NewLine); 
+
+                PdfPTable table = new PdfPTable(7);
+                table.AddCell(new Phrase("Клиент", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+                table.AddCell(new Phrase("Тур", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+                table.AddCell(new Phrase("Отель", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+                table.AddCell(new Phrase("Количество", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+                table.AddCell(new Phrase("Стоимость", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+                table.AddCell(new Phrase("Итого", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+                table.AddCell(new Phrase("Дата", new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black))));
+
+                foreach (Contract i in contract)
+                {
+                    table.AddCell(new Phrase(i.ClientID.ToString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                    table.AddCell(new Phrase(i.TurID.ToString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                    table.AddCell(new Phrase(i.HotelID.ToString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                    table.AddCell(new Phrase(i.Number.ToString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                    table.AddCell(new Phrase(i.Cost.ToString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                    table.AddCell(new Phrase(i.TotalCost.ToString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                    table.AddCell(new Phrase(i.Date.ToShortDateString(), new iTextSharp.text.Font(baseFont, 8, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black))));
+                }
+               
+                doc.Add(a1);
+                doc.Add(table);
+                doc.Close();
+                System.Diagnostics.Process.Start("Contract.pdf");           
+            }
+        }
+    }   
 }
